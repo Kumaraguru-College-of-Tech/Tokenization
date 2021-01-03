@@ -1,0 +1,391 @@
+<!-- 
+    Author       : Preetha P and Ramaguru R
+    Date Created : 31.12.2020
+    Date Updated : 03.01.2021
+-->
+	
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Artwork ERC721</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+	<style>
+
+body{
+  margin:0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://i.ytimg.com/vi/OUF6Cc_7qwM/maxresdefault.jpg) no-repeat center center fixed;
+  background-size:cover;
+  color: black;
+  font-family: "open sans";
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size:15px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: 800;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: capitalize;
+}
+
+</style>	
+</head>
+
+<body>
+
+   <header>
+	<div>
+    <img src="https://lh3.googleusercontent.com/proxy/xi6qTzEUMdd8_S6P5oQCWoztTpIUyknY3feJ-F5iZ8fwNb3xBDLgzTSgSbwDfBA0812KKZ1dbuvhhzRi51d4uCy06o6CEXU" style="height:70px; width:80px;" />
+    &nbsp;<h3>Artwork</h3> 
+	</div>
+	
+	<nav >
+      <ul >
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="Artwork-usecase.html">Back</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+    <div class="main">
+
+        <!-- Artwork Registration -->
+        <section class="issue">
+            <div class="container">
+                <div class="issue-content" id="issueDiv">
+                    <div class="issue-form" style="width:80%;">
+                        <h2 class="form-title"> Artwork Registration</h2>
+                        <form  class="issue-form" id="issue-form">
+						
+							<div class="form-group" >
+                                <label ><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></span></span></label>
+                                <input type="text" id="Art_ID" placeholder="Artwork ID"/>
+                            </div>
+							
+                            <div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:account" data-inline="false"></span></i></label>
+                                <input type="text"  id="Art_Name" placeholder="Artwork Name"/>
+                            </div>
+							
+			  
+							<div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:confirmation-number" data-inline="false"></span></i></label>
+                                <input type="number" id="Art_Year" placeholder="Created Year"/>
+                            </div>
+							
+							<div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:codepen" data-inline="false"></span></span></label>
+                                <input type="text" id="Medium" placeholder="Medium (eg:Paper, Canvas, Ink)"/>
+                            </div>
+							
+							<div class="form-group">
+							   
+                                <label><b><span class="iconify" data-icon="zmdi:photo-size-select-large" data-inline="false"></span></b></label>
+                                <input type="text" id="Art_Size" placeholder="Size with units (eg:30 * 30 inch)" />
+                            </div>
+
+                          <div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:invert-colors" data-inline="false"></span></i></label>
+                                <input type="text" id="Art_Color" placeholder="Color"/>
+                            </div>
+
+
+                          <div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:comment-edit" data-inline="false"></span></i></label>
+                                <input type="text" id="Art_Signature" placeholder="Signature Position"/>
+                            </div>
+
+							<div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:tag-more" data-inline="false"></span></i></label>
+                                <input type="text" id="Art_Price" placeholder="Price"/>
+                            </div>
+
+                          <div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:comment-text" data-inline="false"></span></i></label>
+                                <input type="text" id="Art_Description" placeholder="Description"/>
+                            </div>
+
+                          <div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:badge-check" data-inline="false"></span></i></label>
+                                <input type="text" id="Art_Condition" placeholder="Condition (eg:Good or Bad)"/>
+                            </div>
+							
+							<div class="form-group">
+                                <label><span class="iconify" data-icon="zmdi:photo-size-select-large" data-inline="false"></span>Photo</label>
+                                <input type="file" id="img" placeholder="Select Picture" accept="image/*" style="padding-left:25%;">
+                            </div>
+                        
+                            <div class="btn">
+                                <input type="button" onclick="issue_cert()" value="Register Artwork" 
+								style="width:25%;
+								background-color: #03fc6f;
+								border: 2px solid;
+								border-radius: 0.6em;
+								font-family: Trebuchet MS, Helvetica, sans-serif;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
+                            </div>
+							
+							<div style="float:right;color:#0f7536;">
+							<b>Want to modify a registered Artwork Details?</b>
+							<div class="btn">
+                                <input type="button" onclick="show_modify()" value="Modify Artwork Details" 
+								style="width:65%;
+								background-color: #521c94;
+								border: 2px solid;
+								border-radius: 0.6em;
+								font-family: Trebuchet MS, Helvetica, sans-serif;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
+                            </div>
+							</div>
+                        </form>
+						</div>
+						</div>
+						<!--<div class="issue-image" style="width:20%;">
+                        <figure ><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Anna_University_Logo.svg/1200px-Anna_University_Logo.svg.png" alt="kct logo"></figure>
+						<div class="form-group">
+                                Total Certificates Issued : 
+                        <div id="tsupply" style="color:green;font-weight:bolder;"/> 
+                        </div>
+						</div> -->
+					
+		<!-- Modify Artwork Details -->
+						<div class="modify-content" id="modifyDiv" style="padding-right:80px;display:none;">
+						<div class="modify-form">
+                        <h2 class="form-title">Modify Artwork Details</h2>
+                        <form  class="register-form" >
+                            <div class="form-group">
+                               <table>
+                                <tr><td><input type="text" id="aArtworkID" placeholder="Enter Artwork ID" /></td>
+								<td><input type="button" class="iconify" data-icon="zmdi:search" style="height:15%;width:15%" onclick="getdetails()"/></td></tr>
+                            </table>
+							</div>
+                            <div>
+							<table >
+								<tr><td style="width:50%;height:20px;"> <b>Artwork Name :</b>   <input type="text"  id="aname" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Year :</b>   <input type="number" id="ayr" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Medium :</b>    <input type="text" id="amed" /></td></tr>
+                                <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Size :</b>   <input type="number" id="asize" /> </td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Color :</b>     <input type="text" id="acolor"/></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Signature :</b>  <input type="text" id="asign" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Price :</b>   <input type="number" id="aprice" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Description :</b>    <input type="text" id="adec" /></td></tr>
+                                <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Condition :</b>    <input type="text" id="acon" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Picture :</b>  <input type="file" id="aapic" accept="image/*" /></td></tr>
+							
+							</table>
+							</div><br><br>
+                            
+							 <div class="btn">
+                                <input type="button" onclick="modify_art()" value="Modify Artwork Details" 
+								style="width:25%;
+								background-color: #03fc6f;
+								border: 2px solid;
+								font-family: Trebuchet MS, Helvetica, sans-serif;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
+                            </div>
+							<div style="float:right; padding:60px;color:#0f7536;">
+							<b>Want to register a new Artwork? </b>
+							<div class="btn">
+                                <input type="button" onclick="show_Register()" value="Register Artwork" 
+								style="width:65%;
+								background-color: #521c94;
+								border: 2px solid;
+								font-family: Trebuchet MS, Helvetica, sans-serif;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
+                            </div>
+							</div>
+                        </form> 
+                    </div>
+					</div>	  
+                </div>
+        </section>
+
+
+        <!-- view Artwork Details -->
+        <section class="retrieve">
+            <div class="container">
+                <div class="retrieve-content">
+                    <div class="retrieve-image">
+                        <figure><img src="https://www.downloadclipart.net/medium/51171-artwork-paintbrush-scissors-and-glue-images.png" alt="verify image"></figure>
+                    </div>
+
+                    <div class="retrieve-form">
+                        <h2 class="form-title">View Artwork Details</h2>
+                        <form  class="register-form" >
+                            <div class="form-group">
+                                <label for="your_name"><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></label>
+                                <input type="text" id="ArtworkIDd" placeholder="Artwork ID"/>
+                            </div>
+                            <div>
+							<table >
+								
+								<tr><td style="width:50%;height:20px;"> <b>Name :</b>   <div  id="aname" /></td></tr>
+								<tr><td style="width:50%;height:20px;"> <b>Year :</b>    <div id="ayr" /></td></tr>
+                                <tr><td style="width:50%;height:20px;"> <b>Medium :</b>  <div id="amdm" /></td></tr>
+								<tr><td style="width:50%;height:20px;"> <b>Size :</b>   <div id="asize" /></td></tr>
+								<tr><td style="width:50%;height:20px;"> <b>Color :</b>    <div id="acolor" /></td></tr>
+                                <tr><td style="width:50%;height:20px;"> <b>Signature :</b>  <div id="asign" /></td></tr>
+								<tr><td style="width:50%;height:20px;"> <b>Price :</b>   <div id="aprice" /></td></tr>
+								<tr><td style="width:50%;height:20px;"> <b>Description :</b>    <div id="adespt" /></td></tr>
+                                <tr><td style="width:50%;height:20px;"> <b>Condition :</b>  <div id="acon" /></td></tr>
+								<tr><td style="width:50%;height:20px;"> <b>Picture :</b>   <div id="apic" /></td></tr>
+							</table>
+							</div><br>
+                            <div class="btn">
+                                <input type="button" onclick="view_Artwork Details()" value="View Artwork Details"
+								style="width:75%;
+								background-color: #a8203c;
+								border: 2px solid;
+								font-family: Trebuchet MS, Helvetica, sans-serif;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+   <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.js"></script>
+    <script>	
+	
+	var account;
+	window.addEventListener('load', async () => {
+
+	
+		if (typeof window.ethereum !== 'undefined') { 
+			console.log("MetaMask is Available :) !"); 
+			}
+			
+		// Modern DApp browsers
+		if (window.ethereum) {
+			window.web3 = new Web3(ethereum);
+			
+			// To prevent the page reloading when the MetaMask network changes
+			ethereum.autoRefreshOnNetworkChange = false;
+			
+			// To Capture the account details from MetaMask
+			const accounts = await ethereum.enable();
+			account = accounts[0];
+			
+			}
+			
+		// Legacy DApp browsers
+		else if (window.web3) {
+			//window.web3 = new Web3(web3.currentProvider);
+			window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/cbd9dc11b30147e9a2cc974be655ef7c")); 
+			}
+			
+		// Non-DApp browsers
+		else {
+			console.log('Non-Ethereum browser detected. Please install MetaMask');
+			}
+			
+			loadstatus();
+			
+			});
+		
+				
+		    // Function to get the status about ERC-721 Token
+			function loadstatus() {
+					
+				console.log("Invoking Smart Contracts - Status...");
+						
+				//Instantiate and connect to contract address via ABI
+				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
+				
+				//call the "totalSupply" function
+				var result = myContract.methods.totalSupply().call(function (err, result) {
+				
+				if (err) { console.log(err); }
+				if (result) { document.getElementById("tsupply").innerHTML = result; }
+				
+				});
+					
+			
+				}
+
+			
+			// Functions to show and hide appropiate div 
+			function show_issue() {
+			
+			var modifyDiv = document.getElementById("modifyDiv");
+			modifyDiv.style.display = "none";
+			var issueDiv = document.getElementById("issueDiv");
+			issueDiv.style.display= "block";
+			
+			}
+			
+			function show_modify() {
+			
+			var issueDiv = document.getElementById("issueDiv");
+			issueDiv.style.display = "none";
+			var modifyDiv = document.getElementById("modifyDiv");
+			modifyDiv.style.display = "block";
+			
+			}	
+				
+    </script>  
+	
+</body>
+</html>
