@@ -328,7 +328,9 @@ body{
 				var result = myContract.methods.totalSupply().call(function (err, result) {
 				
 				if (err) { console.log(err); }
-				if (result) { document.getElementById("tsupply").innerHTML = result; }
+				if (result) { 
+					//document.getElementById("tsupply").innerHTML = result; 
+				}
 				
 				});
 					
