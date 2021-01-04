@@ -14,9 +14,8 @@
     <title>Land ERC721</title>
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../../css/style.css">
-	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-	<script src="../js/abi.js"></script>
-	<style>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<style>
 
 body{
   margin:0;
@@ -70,7 +69,7 @@ body{
                         <h2 class="form-title"> Land Details Registration</h2>
                         <form  class="issue-form" id="issue-form">
 						
-						<div class="form-group" >
+			   <div class="form-group" >
                             <label ><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></span></span></label>
                             <input type="text" id="landid" placeholder="Land ID"/>
                             </div>
@@ -154,7 +153,7 @@ body{
 								-webkit-transition: all 150ms ease-in-out;
 								transition: all 150ms ease-in-out;"/>
                             </div>
-							</div> 
+			</div> 
                         </form>
 						</div>
 						</div>
@@ -162,7 +161,7 @@ body{
 	
 		<!-- Modify Land Details -->
 					<div class="modify-content" id="modifyDiv" style="padding-right:80px;display:none;">
-						<div class="modify-form">
+					<div class="modify-form">
                         <h2 class="form-title">Modify Land Details</h2>
                         <form  class="register-form" >
                             <div class="form-group">
@@ -170,7 +169,7 @@ body{
                                 <tr><td><input type="text" id="mtokenID" placeholder="Enter Land ID" /></td>
 								<td><input type="button" class="iconify" data-icon="zmdi:search" style="height:15%;width:15%" onclick="getdetails()"/></td></tr>
                             </table>
-							</div>
+			   </div>
                             <div>
 							<table >
 								<tr><td style="width:50%;height:20px;"> <b>Land Type :</b>   <input type="text"  id="mlandtype" /></td></tr>
@@ -219,11 +218,11 @@ body{
 								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 								-webkit-transition: all 150ms ease-in-out;
 								transition: all 150ms ease-in-out;"/>
-                            </div>
-							</div>
+                         </div>
+			</div>
                         </form> 
                     </div>
-					</div>	  
+		</div>	  
                 </div>  
         </section>
 
@@ -283,7 +282,7 @@ body{
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../../js/main.js"></script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.js"></script>
     <script>	
@@ -358,9 +357,9 @@ body{
 				var size = document.getElementById("landsize").value;
 				var bdet = document.getElementById("landbdet").value;
 				var pno = document.getElementById("pattano").value;
-                var dno = document.getElementById("docno").value;
-                var address = document.getElementById("landown").value;
-                var id = document.getElementById("landid").value;
+                		var dno = document.getElementById("docno").value;
+                		var address = document.getElementById("landown").value;
+                		var id = document.getElementById("landid").value;
 				
 				
 				//call the "Land Details Registeration" function
@@ -449,9 +448,9 @@ body{
 					document.getElementById("landsize").innerHTML = result[3];
 					document.getElementById("landbdet").innerHTML = result[4]; 
 					document.getElementById("pattano").innerHTML = result[5]; 
-                    document.getElementById("docno").innerHTML = result[6];
-                    document.getElementById("landown").innerHTML = result[7];
-                    document.getElementById("landid").innerHTML = result[8];
+                    			document.getElementById("docno").innerHTML = result[6];
+                    			document.getElementById("landown").innerHTML = result[7];
+                    			document.getElementById("landid").innerHTML = result[8];
 				
 				}
 				
@@ -474,14 +473,14 @@ body{
                     if (err) { console.log(err); }
                     if (result) { 
                     
-                    document.getElementById("landtype").value = result[0]; 
+                    			document.getElementById("landtype").value = result[0]; 
 					document.getElementById("landloc").value= result[1]; 
 					document.getElementById("landloctype").value = result[2]; 
 					document.getElementById("landsize").value = result[3];
 					document.getElementById("landbdet").value = result[4]; 
 					document.getElementById("pattano").value = result[5]; 
-                    document.getElementById("docno").value = result[6];
-                    document.getElementById("landown").value = result[7];
+                    			document.getElementById("docno").value = result[6];
+                    			document.getElementById("landown").value = result[7];
                     }
                     
                     });
