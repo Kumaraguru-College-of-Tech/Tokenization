@@ -14,7 +14,7 @@
     <title>Degree Certificate ERC1155</title>
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../../css/style.css">
-	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 	<style>
 
 body{
@@ -47,7 +47,7 @@ body{
 
    <header>
    <div>
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Anna_University_Logo.svg/1200px-Anna_University_Logo.svg.png" style="height:40px; width:40px;" />
+    <img src="../../images/certificate-logo.png" style="height:40px; width:40px;" />
     &nbsp;<h3>Degree Certificate</h3> 
     </div>
 	<nav >
@@ -68,8 +68,8 @@ body{
                         <h2 class="form-title">Issue Certificate</h2>
                         <form  class="issue-form" id="issue-form">
 						
-			    <div class="form-group" >
-                                <label ><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span><label>
+			    <div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></label>
                                 <input type="text" id="tokenID" placeholder="Certificate ID"/>
                             </div>
 							
@@ -225,7 +225,7 @@ body{
             <div class="container">
                 <div class="retrieve-content">
                     <div class="retrieve-image">
-                        <figure><img src="https://cdn.dribbble.com/users/269807/screenshots/4782863/verify.jpg" alt="verify image"></figure>
+                        <figure><img src="../../images/artwork-view" alt="verify image"></figure>
                     </div>
 
                     <div class="retrieve-form">
@@ -324,7 +324,9 @@ body{
 				var result = myContract.methods.totalSupply().call(function (err, result) {
 				
 				if (err) { console.log(err); }
-				if (result) { document.getElementById("tsupply").innerHTML = result; }
+				if (result) { 
+					//document.getElementById("tsupply").innerHTML = result; 
+				}
 				
 				});
 					
