@@ -174,7 +174,8 @@ body{
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Classification :</b>  <input type="text" id="mcls" /></td></tr>
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Date of Issue :</b>   <input type="date" id="missdate" /></td></tr>
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Holder Wallet Address :</b>    <input type="text" id="mholder" /></td></tr>
-							</table>
+								<tr><td <div id="msg2" style="color:blue;font-weight:bold;"></div></td></tr>			
+				    				</table>
 							</div><br><br>
                             
 							 <div class="btn">
@@ -225,7 +226,7 @@ body{
         <section class="retrieve">
             <div class="container">
                 <div class="retrieve-content">
-                    <div class="retrieve-image" style="width:50%;">>
+                    <div class="retrieve-image" style="width:50%;">
                         <figure><img src="../../images/certificate-view.png" alt="verify image"></figure>
                     </div>
 
@@ -464,7 +465,7 @@ body{
 					document.getElementById("mcls").value = result[3];
 					document.getElementById("missdate").value = result[4]; 
 					document.getElementById("mholder").value = result[5];
-					document.getElementById("msg").innerHTML = result[6];					
+					document.getElementById("msg2").innerHTML = result[6];					
 				
 				}
 				
