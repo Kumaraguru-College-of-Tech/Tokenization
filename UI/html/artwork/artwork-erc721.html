@@ -80,10 +80,7 @@ body{
                             </div>
 							
 			  
-							<div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:confirmation-number" data-inline="false"></span></i></label>
-                                <input type="date" id="Art_Year" placeholder="Created Date"/>
-                            </div>
+				
 							
 							<div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:codepen" data-inline="false"></span></span></label>
@@ -126,6 +123,11 @@ body{
                                 <label><span class="iconify" data-icon="zmdi:photo-size-select-large" data-inline="false"></span>Photo</label>
                                 <input type="file" id="img" placeholder="Select Picture" accept="image/*" style="padding-left:25%;">
                             </div>
+   
+                         <div class="form-group">
+                                <label><b>Created Date </b></label>
+                                <br><br><input type="date" id="date" placeholder="Created Date" style="width:45%;"/>
+                            </div> 
                         
                             <div class="btn">
                                 <input type="button" onclick="issue_cert()" value="Register Artwork" 
@@ -184,7 +186,6 @@ body{
                             <div>
 							<table >
 								<tr><td style="width:50%;height:20px;"> <b>Artwork Name :</b>   <input type="text"  id="aname" /></td></tr>
-								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>date :</b>   <input type="date" id="adate" /></td></tr>
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Medium :</b>    <input type="text" id="amed" /></td></tr>
                                 <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Size :</b>   <input type="number" id="asize" /> </td></tr>
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Color :</b>     <input type="text" id="acolor"/></td></tr>
@@ -193,7 +194,7 @@ body{
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Description :</b>    <input type="text" id="adec" /></td></tr>
                                 <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Condition :</b>    <input type="text" id="acon" /></td></tr>
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Picture :</b>  <input type="file" id="aapic" accept="image/*" /></td></tr>
-							
+							        <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Date :</b>   <input type="date" id="adate" /></td></tr>
 							</table>
 							</div><br><br>
                             
@@ -260,7 +261,7 @@ body{
 							<table >
 								
 								<tr><td style="width:50%;height:20px;"> <b>Name :</b>   <div  id="aname" /></td></tr>
-								<tr><td style="width:50%;height:20px;"> <b>Year :</b>    <div id="ayr" /></td></tr>
+								
                                 <tr><td style="width:50%;height:20px;"> <b>Medium :</b>  <div id="amdm" /></td></tr>
 								<tr><td style="width:50%;height:20px;"> <b>Size :</b>   <div id="asize" /></td></tr>
 								<tr><td style="width:50%;height:20px;"> <b>Color :</b>    <div id="acolor" /></td></tr>
@@ -269,6 +270,7 @@ body{
 								<tr><td style="width:50%;height:20px;"> <b>Description :</b>    <div id="adespt" /></td></tr>
                                 <tr><td style="width:50%;height:20px;"> <b>Condition :</b>  <div id="acon" /></td></tr>
 								<tr><td style="width:50%;height:20px;"> <b>Picture :</b>   <div id="apic" /></td></tr>
+								<tr><td style="width:50%;height:20px;"> <b>Date :</b>   <div id="adate" /></td></tr>
 							</table>
 							</div><br>
                             <div class="btn">
