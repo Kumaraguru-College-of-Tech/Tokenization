@@ -1,7 +1,7 @@
 <!-- 
     Author       : Sandhiya S and Ramaguru R
     Date Created : 02.01.2021
-    Date Updated : 02.01.2021
+    Date Updated : 14.01.2021
 -->
 	
 
@@ -48,7 +48,7 @@ body{
    <header>
    <div>
     <img src="../../images/certificate-logo.png" style="height:40px; width:40px;" />
-    &nbsp;<h3>Degree Certificate</h3> 
+    &nbsp;<h3>Anna University</h3> 
     </div>
 	<nav >
       <ul >
@@ -65,7 +65,7 @@ body{
             <div class="container">
                 <div class="issue-content" id="issueDiv">
                     <div class="issue-form" style="width:80%;">
-                        <h2 class="form-title">Issue Certificate</h2>
+                        <h2 class="form-title">Issue Degree Certificate</h2>
                         <form  class="issue-form" id="issue-form">
 						
 			    <div class="form-group">
@@ -235,19 +235,9 @@ body{
                                 <label for="your_name"><span class="iconify" data-icon="zmdi:labels" data-inline="false"></span></label>
                                 <input type="text" id="tokenIDd" placeholder="Certificate ID"/>
                             </div>
-                            <div>
-							<table >
-								<tr><td style="width:50%;height:30px;"> Name :   <div id="cname" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Institution :  <div id="cinst" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Department :   <div id="cdept" style="color:green;"></div></td></tr>
-								<tr><td style="width:50%;height:30px;"> Classification :  <div id="ccls" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Date of Issue :   <div id="cissdate" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Holder Wallet Address :  <div id="cholder" style="color:green;"></div></td></tr>
-							</table>
-							</div><br>
-                            <div class="btn">
+				<div class="btn">
                                 <input type="button" onclick="view_certdetails()" value="View Certificate"
-								style="width:75%;
+								style="width:35%;
 								background-color: #a8203c;
 								border: 2px solid;
 								font-family: Trebuchet MS, Helvetica, sans-serif;
@@ -262,6 +252,18 @@ body{
 								-webkit-transition: all 150ms ease-in-out;
 								transition: all 150ms ease-in-out;"/>
                             </div>
+                            <div>
+							<table >
+								<tr><td <div id="msg" style="color:blue;font-weight:bold;"></div></td></tr>
+								<tr><td style="width:50%;height:30px;"> Name :   <div id="cname" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Institution :  <div id="cinst" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Department :   <div id="cdept" style="color:green;"></div></td></tr>
+								<tr><td style="width:50%;height:30px;"> Classification :  <div id="ccls" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Date of Issue :   <div id="cissdate" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Holder Wallet Address :  <div id="cholder" style="color:green;"></div></td></tr>
+							</table>
+							</div><br>
+                            
                         </form> 
                     </div>
                 </div>
