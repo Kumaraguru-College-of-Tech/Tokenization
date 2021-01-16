@@ -28,6 +28,10 @@ contract Lands is ERC721{
       uint256 Land_Size;            /* Land Size */
      
       string Land_Bound_Det;         /*Land Boundary Details*/
+      
+      string Land_Lat_Det;           /*Land Latitude Details*/
+      
+      string Land Long_Det;          /*Land Longitude Details*/
      
       uint256 Land_Patta_No;        /* Land Patta Number */
      
@@ -52,7 +56,9 @@ contract Lands is ERC721{
      * @param ui_Land_Loc                  Land Location 
      * @param ui_Land_Loc_Type             Land Location Type
      * @param ui_Land_Size                 Land Size          
-     * @param ui_Land_Bound_Det            Land Boundary Details        
+     * @param ui_Land_Bound_Det            Land Boundary Details
+     * @param ui_Land_Lat_Det              Land Latitude Details
+     * @param ui_Land_Long_Det             Land Longitude Details
      * @param ui_Land_Patta_No             Land Patta Number
      * @param ui_Land_Doc_No               Land Document Number
      * @param ui_Land_Owner_Adr            Land Owner Address
@@ -60,7 +66,7 @@ contract Lands is ERC721{
  
 
    
-    function issueLand(string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, uint256 ui_Land_Patta_No,
+    function issueLand(string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, string memory ui_Land_Lat_Det, string memory ui_Land_Long_Det, uint256 ui_Land_Patta_No,
                         uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public {
                              
                              lan.Land_Id                 += 1;
@@ -69,6 +75,8 @@ contract Lands is ERC721{
                              lan.Land_Loc_Type           = ui_Land_Loc_Type;
                              lan.Land_Size               = ui_Land_Size;
                              lan.Land_Bound_Det          = ui_Land_Bound_Det;
+                             lan.Land_Lat_Det            = ui_Land_Lat_Det;
+                             lan.Land_Long_Det           = ui_Land_Long_Det;
                              lan.Land_Patta_No           = ui_Land_Patta_No;
                              lan.Land_Doc_No             = ui_Land_Doc_No;
                              lan.Land_Owner_Adr          = ui_Land_Owner_Adr;
@@ -85,7 +93,9 @@ contract Lands is ERC721{
      * @param Land_Loc                  Land Location 
      * @param Land_Loc_Type             Land Location Type
      * @param Land_Size                 Land Size          
-     * @param Land_Bound_Det            Land Boundary Details        
+     * @param Land_Bound_Det            Land Boundary Details 
+     * @param Land_Lat_Det              Land Latitude Details
+     * @param Land_Long_Det             Land Longitude Details
      * @param Land_Patta_No             Land Patta Number
      * @param Land_Doc_No               Land Document Number
      * @param Land_Owner_Adr            Land Owner Address
@@ -95,7 +105,7 @@ contract Lands is ERC721{
 
    
     function retrieveLand(uint256 Land_Id) public view returns ( string memory Land_Type, string memory Land_Loc, string memory Land_Loc_Type, uint256 Land_Size,
-    string memory Land_Bound_Det, uint256 Land_Patta_No, uint256 Land_Doc_No, address Land_Owner_Adr) {
+    string memory Land_Bound_Det, string memory Land_Lat_Det, string memory Land_Long_Det, uint256 Land_Patta_No, uint256 Land_Doc_No, address Land_Owner_Adr) {
        
       Land storage Lid = LandList[Land_Id];  
        return(
@@ -104,6 +114,8 @@ contract Lands is ERC721{
               Lid.Land_Loc_Type,
               Lid.Land_Size,
               Lid.Land_Bound_Det,
+              Lid.Land_Lat_Det,
+              Lid.Land_Long_Det,
               Lid.Land_Patta_No,
               Lid.Land_Doc_No,
               Lid.Land_Owner_Adr
@@ -119,12 +131,14 @@ contract Lands is ERC721{
      * @param ui_Land_Loc_Type             Land Location Type
      * @param ui_Land_Size                 Land Size          
      * @param ui_Land_Bound_Det            Land Boundary Details        
+     * @param ui_Land_Lat_Det              Land Latitude Details
+     * @param ui_Land_Long_Det             Land Longitude Details
      * @param ui_Land_Patta_No             Land Patta Number
      * @param ui_Land_Doc_No               Land Document Number
      * @param ui_Land_Owner_Adr            Land Owner Address
     */
     
-    function updateLand(uint256 ui_Land_Token, string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, uint256 ui_Land_Patta_No,
+    function updateLand(uint256 ui_Land_Token, string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, string memory ui_Land_Lat_det, string memory ui_Land_Long_det, uint256 ui_Land_Patta_No,
                         uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public {
                              
                             Land storage Lid = LandList[ui_Land_Token];  
@@ -134,6 +148,8 @@ contract Lands is ERC721{
                              Lid.Land_Loc_Type           = ui_Land_Loc_Type;
                              Lid.Land_Size               = ui_Land_Size;
                              Lid.Land_Bound_Det          = ui_Land_Bound_Det;
+                             Lid.Land_Lat_Det            = ui_Land_Lat_Det;
+                             Lid.Land_Long_Det           = ui_Land_Long_Det;
                              Lid.Land_Patta_No           = ui_Land_Patta_No;
                              Lid.Land_Doc_No             = ui_Land_Doc_No;
                              Lid.Land_Owner_Adr          = ui_Land_Owner_Adr;
