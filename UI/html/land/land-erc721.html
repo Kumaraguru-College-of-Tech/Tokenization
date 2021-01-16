@@ -1,7 +1,7 @@
 <!-- 
     Author       : Sowbharnika K and Ramaguru R
     Date Created : 28.12.2020
-    Date Updated : 03.01.2021
+    Date Updated : 16.01.2021
 -->
 	
 
@@ -100,7 +100,11 @@ body{
                             </div>
 	                     <div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:navigation" data-inline="false"></span></label>
-                                <input type="text" id="landbdet" placeholder="Land Latitude Detail"/>
+                                <input type="text" id="landlatdet" placeholder="Land Latitude Detail"/>
+                            </div>
+	                     <div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:navigation" data-inline="false"></span></label>
+                                <input type="text" id="landlongdet" placeholder="Land Longitude Detail"/>
                             </div>
 							
 							<div class="form-group">
@@ -181,6 +185,8 @@ body{
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Location Type :</b>     <input type="text" id="mlandloctype"/></td></tr>
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Size :</b>  <input type="text" id="mlandsize" /></td></tr>
                                 <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Boundary Details :</b>   <input type="text" id="mlandbdet" /></td></tr>
+			        <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Latitude Details :</b>   <input type="text" id="mlandlatdet" /></td></tr>
+				<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Longitude Details :</b>   <input type="text" id="mlandlongdet" /></td></tr>
                                 <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Patta No :</b>   <input type="number" id="mpattano" /></td></tr>
                                 <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Document No :</b>   <input type="number" id="mdocno" /></td></tr>
 								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Land Owner Wallet Address :</b>    <input type="text" id="mlandown" /></td></tr>
@@ -270,8 +276,8 @@ body{
 								<tr><td style="width:50%;height:30px;"> Land Location Type :   <div id="ltype" style="color:green;"></div></td></tr>
 								<tr><td style="width:50%;height:30px;"> Land Size :  <div id="lsize" style="color:green;"></div> </td></tr>
                                 				<tr><td style="width:50%;height:30px;"> Land Boundary Details :   <div id="lbdet" style="color:green;"></div> </td></tr>
-                                				<tr><td style="width:50%;height:30px;"> Land Longitude :   <div id="llong" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Land Latitude :   <div id="llat" style="color:green;"></div> </td></tr>
+                                				<tr><td style="width:50%;height:30px;"> Land Longitude Details :   <div id="llong" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Land Latitude Details :   <div id="llat" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Land Patta No :   <div id="lpattano" style="color:green;"></div> </td></tr>
                                 				<tr><td style="width:50%;height:30px;"> Land Document No :   <div id="ldocno" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Land Owner Wallet Address :  <div id="lholder" style="color:green;"></div></td></tr>
@@ -363,6 +369,8 @@ body{
 				var loctyp = document.getElementById("landloctype").value;
 				var size = document.getElementById("landsize").value;
 				var bdet = document.getElementById("landbdet").value;
+				var latdet = document.getElementById("landlatdet").value;
+				var longdet = document.getElementById("landlongdet").value;
 				var pno = document.getElementById("pattano").value;
                 		var dno = document.getElementById("docno").value;
                 		var address = document.getElementById("landown").value;
@@ -370,7 +378,7 @@ body{
 				
 				
 				//call the "Land Details Registeration" function
-				result = myContract.methods.register_land(id, typ, loc, loctyp, size, bdet, pno, dno, address).send(function (err, result) {
+				result = myContract.methods.register_land(id, typ, loc, loctyp, size, bdet, latdet, longdet, pno, dno, address).send(function (err, result) {
 				
 				if (err) { console.log(err); }
 				//if (result) { document.getElementById("transresult").innerHTML = result; }
@@ -392,6 +400,8 @@ body{
                     var loctyp = document.getElementById("mlandloctype").value;
                     var size = document.getElementById("mlandsize").value;
                     var bdet = document.getElementById("mlandbdet").value;
+		    var latdet = document.getElementById("mlandlatdet").value;
+		    var longdet = document.getElementById("mlandlongdet").value;
                     var pno = document.getElementById("mpattano").value;
                     var dno = document.getElementById("mdocno").value;
                     var address = document.getElementById("mlandown").value;
@@ -399,7 +409,7 @@ body{
                     //var ipfshash = document.getElementById("ipfshash").value;
                     
                     //call the "register land" function
-                    result = myContract.methods.modify_land(id, typ, loc, loctyp, size, bdet, pno, dno, address).send(function (err, result) {
+                    result = myContract.methods.modify_land(id, type, loc, loctyp, size, bdet, latdet, longdet, pno, dno, address).send(function (err, result) {
                     
                     if (err) { 
                         console.log(err);
@@ -453,11 +463,13 @@ body{
 					document.getElementById("landloc").innerHTML = result[1]; 
 					document.getElementById("landloctype").innerHTML = result[2]; 
 					document.getElementById("landsize").innerHTML = result[3];
-					document.getElementById("landbdet").innerHTML = result[4]; 
-					document.getElementById("pattano").innerHTML = result[5]; 
-                    			document.getElementById("docno").innerHTML = result[6];
-                    			document.getElementById("landown").innerHTML = result[7];
-                    			document.getElementById("landid").innerHTML = result[8];
+					document.getElementById("landbdet").innerHTML = result[4];
+					document.getElementById("landlatdet").innerHTML = result[5];
+					document.getElementById("landlongdet").innerHTML = result[6];
+					document.getElementById("pattano").innerHTML = result[7]; 
+                    			document.getElementById("docno").innerHTML = result[8];
+                    			document.getElementById("landown").innerHTML = result[9];
+                    			document.getElementById("landid").innerHTML = result[10];
 				
 				}
 				
@@ -485,9 +497,11 @@ body{
 					document.getElementById("landloctype").value = result[2]; 
 					document.getElementById("landsize").value = result[3];
 					document.getElementById("landbdet").value = result[4]; 
-					document.getElementById("pattano").value = result[5]; 
-                    			document.getElementById("docno").value = result[6];
-                    			document.getElementById("landown").value = result[7];
+			                document.getElementById("landlatdet").value = result[5];
+			                document.getElementById("landlongdet").value = result[6];
+					document.getElementById("pattano").value = result[7]; 
+                    			document.getElementById("docno").value = result[8];
+                    			document.getElementById("landown").value = result[9];
                     }
                     
                     });
