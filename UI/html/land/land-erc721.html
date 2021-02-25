@@ -378,7 +378,7 @@ body{
 				
 				
 				//call the "Land Details Registeration" function
-				result = myContract.methods.register_land(id, typ, loc, loctyp, size, bdet, latdet, longdet, pno, dno, address).send(function (err, result) {
+				result = myContract.methods.issueLand(typ, loc, loctyp, size, bdet, latdet, longdet, pno, dno, address).send(function (err, result) {
 				
 				if (err) { console.log(err); }
 				//if (result) { document.getElementById("transresult").innerHTML = result; }
@@ -409,7 +409,7 @@ body{
                     //var ipfshash = document.getElementById("ipfshash").value;
                     
                     //call the "register land" function
-                    result = myContract.methods.modify_land(id, type, loc, loctyp, size, bdet, latdet, longdet, pno, dno, address).send(function (err, result) {
+                    result = myContract.methods.updateLand(id, type, loc, loctyp, size, bdet, latdet, longdet, pno, dno, address).send(function (err, result) {
                     
                     if (err) { 
                         console.log(err);
@@ -454,7 +454,7 @@ body{
 				var tokenID = document.getElementById("tokenIDd").value;
 				
 				//call the "View Land Details" function
-				var result = myContract.methods.retrieve_land(tokenID).call(function (err, result) {
+				var result = myContract.methods.retrieveLand(tokenID).call(function (err, result) {
 				
 				if (err) { console.log(err); }
 				if (result) { 
@@ -487,7 +487,7 @@ body{
                     var tokenID = document.getElementById("mtokenID").value;
                     
                     //call the "view land details" function
-                    var result = myContract.methods.retrieve_land(tokenID).call(function (err, result) {
+                    var result = myContract.methods.retrieveLand(tokenID).call(function (err, result) {
                     
                     if (err) { console.log(err); }
                     if (result) { 
