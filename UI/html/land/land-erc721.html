@@ -343,7 +343,7 @@ body{
 				console.log("Invoking Smart Contracts - Status...");
 						
 				//Instantiate and connect to contract address via ABI
-				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
+				var myContract = new web3.eth.Contract(land_abi,land_contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
 				
 				//call the "totalSupply" function
 				var result = myContract.methods.totalSupply().call(function (err, result) {
@@ -362,7 +362,7 @@ body{
 				console.log("Registering land details");
 						
 				//Instantiate and connect to contract address via ABI
-				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
+				var myContract = new web3.eth.Contract(land_abi,land_contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
 								
 				var typ = document.getElementById("landtype").value;
 				var loc = document.getElementById("landloc").value;
@@ -393,7 +393,7 @@ body{
                     console.log("Modifying Land Details");
                             
                     //Instantiate and connect to contract address via ABI
-                    var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
+                    var myContract = new web3.eth.Contract(land_abi,land_contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
                                     
                     var type = document.getElementById("mlandtype").value;
                     var loc = document.getElementById("mlandloc").value;
@@ -449,7 +449,7 @@ body{
 				console.log("Getting Land Details");
 						
 				//Instantiate and connect to contract address via ABI
-				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
+				var myContract = new web3.eth.Contract(land_abi,land_contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
 								
 				var tokenID = document.getElementById("tokenIDd").value;
 				
@@ -482,7 +482,7 @@ body{
                     console.log("Getting Land Details ");
                             
                     //Instantiate and connect to contract address via ABI
-                    var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
+                    var myContract = new web3.eth.Contract(land_abi,land_contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
                                     
                     var tokenID = document.getElementById("mtokenID").value;
                     
