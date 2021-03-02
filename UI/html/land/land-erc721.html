@@ -69,10 +69,10 @@ body{
                         <h2 class="form-title"> Land Details Registration</h2>
                         <form  class="issue-form" id="issue-form">
 						
-			   <div class="form-group" >
+			   <!--<div class="form-group" >
                             <label ><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></span></span></label>
                             <input type="text" id="landid" placeholder="Land ID"/>
-                            </div>
+                            </div>-->
 							
                             <div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:landscape" data-inline="false"></span></i></label>
@@ -374,7 +374,7 @@ body{
 				var pno = document.getElementById("pattano").value;
                 		var dno = document.getElementById("docno").value;
                 		var address = document.getElementById("landown").value;
-                		var id = document.getElementById("landid").value;
+                		//var id = document.getElementById("landid").value;
 				
 				
 				//call the "Land Details Registeration" function
@@ -394,7 +394,8 @@ body{
                             
                     //Instantiate and connect to contract address via ABI
                     var myContract = new web3.eth.Contract(land_abi,land_contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
-                                    
+                    
+		    var id = document.getElementById("mtokenID").value;                
                     var type = document.getElementById("mlandtype").value;
                     var loc = document.getElementById("mlandloc").value;
                     var loctyp = document.getElementById("mlandloctype").value;
@@ -405,7 +406,7 @@ body{
                     var pno = document.getElementById("mpattano").value;
                     var dno = document.getElementById("mdocno").value;
                     var address = document.getElementById("mlandown").value;
-                    var id = document.getElementById("mtokenID").value;
+                    
                     //var ipfshash = document.getElementById("ipfshash").value;
                     
                     //call the "register land" function
@@ -492,16 +493,16 @@ body{
                     if (err) { console.log(err); }
                     if (result) { 
                     
-                    			document.getElementById("landtype").value = result[0]; 
-					document.getElementById("landloc").value= result[1]; 
-					document.getElementById("landloctype").value = result[2]; 
-					document.getElementById("landsize").value = result[3];
-					document.getElementById("landbdet").value = result[4]; 
-			                document.getElementById("landlatdet").value = result[5];
-			                document.getElementById("landlongdet").value = result[6];
-					document.getElementById("pattano").value = result[7]; 
-                    			document.getElementById("docno").value = result[8];
-                    			document.getElementById("landown").value = result[9];
+                    			document.getElementById("mlandtype").value = result[0]; 
+					document.getElementById("mlandloc").value= result[1]; 
+					document.getElementById("mlandloctype").value = result[2]; 
+					document.getElementById("mlandsize").value = result[3];
+					document.getElementById("mlandbdet").value = result[4]; 
+			                document.getElementById("mlandlatdet").value = result[5];
+			                document.getElementById("mlandlongdet").value = result[6];
+					document.getElementById("mpattano").value = result[7]; 
+                    			document.getElementById("mdocno").value = result[8];
+                    			document.getElementById("mlandown").value = result[9];
                     }
                     
                     });
