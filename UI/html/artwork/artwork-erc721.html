@@ -3,138 +3,147 @@
     Date Created : 31.12.2020
     Date Updated : 03.01.2021
 -->
-	
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Artwork ERC721</title>
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Artwork ERC721</title>
+	<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
 	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://i.ytimg.com/vi/OUF6Cc_7qwM/maxresdefault.jpg) no-repeat center center fixed;
+			background-size: cover;
+			color: black;
+			font-family: "open sans";
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 
-body{
-  margin:0;
-  padding: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://i.ytimg.com/vi/OUF6Cc_7qwM/maxresdefault.jpg) no-repeat center center fixed;
-  background-size:cover;
-  color: black;
-  font-family: "open sans";
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size:15px;
-  letter-spacing: 2px;
-  word-spacing: 2px;
-  color: #000000;
-  font-weight: 800;
-  font-style: normal;
-  font-variant: normal;
-  text-transform: capitalize;
-}
-
-</style>	
+			font-family: "Trebuchet MS", Helvetica, sans-serif;
+			font-size: 15px;
+			letter-spacing: 2px;
+			word-spacing: 2px;
+			color: #000000;
+			font-weight: 800;
+			font-style: normal;
+			font-variant: normal;
+			text-transform: capitalize;
+		}
+	</style>
 </head>
 
 <body>
 
-   <header>
-	<div>
-    <img src="../../images/artwork-logo.png" style="height:70px; width:80px;" />
-    &nbsp;<h3>Preetha Artwork center</h3> 
-	</div>
-	
-	<nav >
-      <ul >
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="artwork-usecase.html">Back</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-    <div class="main">
+	<header>
+		<div>
+			<img src="../../images/artwork-logo.png" style="height:70px; width:80px;" />
+			&nbsp;<h3>Preetha Artwork center</h3>
+		</div>
 
-        <!-- Artwork Registration -->
-        <section class="issue">
-            <div class="container">
-                <div class="issue-content" id="issueDiv">
-                    <div class="issue-form" style="width:80%;">
-                        <h2 class="form-title"> Artwork Registration</h2>
-                        <form  class="issue-form" id="issue-form">
-						
-							<div class="form-group" >
-                                <label ><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></span></span></label>
-                                <input type="text" id="Art_ID" placeholder="Artwork ID"/>
-                            </div>
-							
-                            <div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:account" data-inline="false"></span></i></label>
-                                <input type="text"  id="Art_Name" placeholder="Artwork Name"/>
-                            </div>
-							
-			  
-				
-							
-							<div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:codepen" data-inline="false"></span></span></label>
-                                <input type="text" id="Medium" placeholder="Medium (eg:Paper, Canvas, Ink)"/>
-                            </div>
-							
-							<div class="form-group">
-							   
-                                <label><b><span class="iconify" data-icon="zmdi:photo-size-select-large" data-inline="false"></span></b></label>
-                                <input type="text" id="Art_Size" placeholder="Size with units (eg:30 * 30 inch)" />
-                            </div>
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="artwork-usecase.html">Back</a></li>
+			</ul>
+		</nav>
+	</header>
 
-                          <div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:invert-colors" data-inline="false"></span></i></label>
-                                <input type="text" id="Art_Color" placeholder="Color"/>
-                            </div>
+	<div class="main">
 
-
-                          <div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:comment-edit" data-inline="false"></span></i></label>
-                                <input type="text" id="Art_Signature" placeholder="Signature Position"/>
-                            </div>
+		<!-- Artwork Registration -->
+		<section class="issue">
+			<div class="container">
+				<div class="issue-content" id="issueDiv">
+					<div class="issue-form" style="width:80%;">
+						<h2 class="form-title"> Artwork Registration</h2>
+						<form class="issue-form" id="issue-form">
 
 							<div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:tag-more" data-inline="false"></span></i></label>
-                                <input type="text" id="Art_Price" placeholder="Price"/>
-                            </div>
+								<label><span class="iconify" data-icon="zmdi:format-list-numbered"
+										data-inline="false"></span></span></span></label>
+								<input type="text" id="artworkID" placeholder="Artwork ID" />
+							</div>
 
-                          <div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:comment-text" data-inline="false"></span></i></label>
-                                <input type="text" id="Art_Description" placeholder="Description"/>
-                            </div>
-
-                          <div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:badge-check" data-inline="false"></span></i></label>
-                                <input type="text" id="Art_Condition" placeholder="Condition (eg:Good or Bad)"/>
-                            </div>
-							
 							<div class="form-group">
-                                <label><span class="iconify" data-icon="zmdi:photo-size-select-large" data-inline="false"></span>Photo</label>
-                                <input type="file" id="img" placeholder="Select Picture" accept="image/*" style="padding-left:25%;">
-                            </div>
-   
-                         <div class="form-group">
-                                <label><b>Created Date </b></label>
-                                <br><br><input type="date" id="date" placeholder="Created Date" style="width:45%;"/>
-                            </div> 
-                        
-                            <div class="btn">
-                                <input type="button" onclick="issue_cert()" value="Register Artwork" 
-								style="width:25%;
+								<label><span class="iconify" data-icon="zmdi:account"
+										data-inline="false"></span></i></label>
+								<input type="text" id="name" placeholder="Artwork Name" />
+							</div>
+
+
+
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:codepen"
+										data-inline="false"></span></span></label>
+								<input type="text" id="medium" placeholder="Medium (eg:Paper, Canvas, Ink)" />
+							</div>
+
+							<div class="form-group">
+
+								<label><b><span class="iconify" data-icon="zmdi:photo-size-select-large"
+											data-inline="false"></span></b></label>
+								<input type="text" id="size" placeholder="Size with units (eg:30 * 30 inch)" />
+							</div>
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:invert-colors"
+										data-inline="false"></span></i></label>
+								<input type="text" id="color" placeholder="Color" />
+							</div>
+
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:comment-edit"
+										data-inline="false"></span></i></label>
+								<input type="text" id="signature" placeholder="Signature Position" />
+							</div>
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:tag-more"
+										data-inline="false"></span></i></label>
+								<input type="text" id="price" placeholder="Price" />
+							</div>
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:comment-text"
+										data-inline="false"></span></i></label>
+								<input type="text" id="description" placeholder="Description" />
+							</div>
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:badge-check"
+										data-inline="false"></span></i></label>
+								<input type="text" id="condition" placeholder="Condition (eg:Good or Bad)" />
+							</div>
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:photo-size-select-large"
+										data-inline="false"></span>Photo</label>
+								<input type="file" id="img" placeholder="Select Picture" accept="image/*"
+									style="padding-left:25%;">
+							</div>
+
+							<div class="form-group">
+								<label><b>Created Date </b></label>
+								<br><br><input type="date" id="date" placeholder="Created Date" style="width:45%;" />
+							</div>
+
+							<div class="btn">
+								<input type="button" onclick="register_col()" value="Register Artwork" style="width:25%;
 								background-color: #03fc6f;
 								border: 2px solid;
-								border-radius: 0.6em;
+								border-radius: 0.6em; 
 								font-family: Trebuchet MS, Helvetica, sans-serif;
 								color: white;
 								padding: 10px 15px;
@@ -144,14 +153,16 @@ body{
 								color: #fff;
 								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 								-webkit-transition: all 150ms ease-in-out;
-								transition: all 150ms ease-in-out;"/>
-                            </div>
-							
+								transition: all 150ms ease-in-out;" />
+								<h5> Transaction ID: <div id="fresult"></div>
+									<h6><a href="https://ropsten.etherscan.io/" target="_blank">Click here to verify in
+											EtherScan</a></h6>
+							</div>
+
 							<div style="float:right;color:#0f7536;">
-							<b>Want to modify a registered Artwork Details?</b>
-							<div class="btn">
-                                <input type="button" onclick="show_modify()" value="Modify Artwork Details" 
-								style="width:65%;
+								<b>Want to modify a registered Artwork Details?</b>
+								<div class="btn">
+									<input type="button" onclick="show_modify()" value="Modify Artwork Details" style="width:65%;
 								background-color: #521c94;
 								border: 2px solid;
 								border-radius: 0.6em;
@@ -164,43 +175,75 @@ body{
 								color: #fff;
 								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 								-webkit-transition: all 150ms ease-in-out;
-								transition: all 150ms ease-in-out;"/>
-                            </div>
+								transition: all 150ms ease-in-out;" />
+								</div>
 							</div>
-                        </form>
-						</div>
-						</div>
-						
-					
-		<!-- Modify Artwork Details -->
-						<div class="modify-content" id="modifyDiv" style="padding-right:80px;display:none;">
-						<div class="modify-form">
-                        <h2 class="form-title">Modify Artwork Details</h2>
-                        <form  class="register-form" >
-                            <div class="form-group">
-                               <table>
-                                <tr><td><input type="text" id="aArtworkID" placeholder="Enter Artwork ID" /></td>
-								<td><input type="button" class="iconify" data-icon="zmdi:search" style="height:15%;width:15%" onclick="getdetails()"/></td></tr>
-                            </table>
+						</form>
+					</div>
+				</div>
+
+
+				<!-- Modify Artwork Details -->
+				<div class="modify-content" id="modifyDiv" style="padding-right:80px;display:none;">
+					<div class="modify-form">
+						<h2 class="form-title">Modify Artwork Details</h2>
+						<form class="register-form">
+							<div class="form-group">
+								<table>
+									<tr>
+										<td><input type="text" id="martworkID" placeholder="Enter Artwork ID" /></td>
+										<td><input type="button" class="iconify" data-icon="zmdi:search"
+												style="height:5%;width:7%" onclick="getdetails()" /></td>
+									</tr>
+								</table>
 							</div>
-                            <div>
-							<table >
-								<tr><td style="width:50%;height:20px;"> <b>Artwork Name :</b>   <input type="text"  id="aname" /></td></tr>
-								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Medium :</b>    <input type="text" id="amed" /></td></tr>
-                                				<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Size :</b>   <input type="number" id="asize" /> </td></tr>
-								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Color :</b>     <input type="text" id="acolor"/></td></tr>
-								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Signature :</b>  <input type="text" id="asign" /></td></tr>
-								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Price :</b>   <input type="number" id="aprice" /></td></tr>
-								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Description :</b>    <input type="text" id="adec" /></td></tr>
-                                				<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Condition :</b>    <input type="text" id="acon" /></td></tr>
-								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Picture :</b>  <input type="file" id="aapic" accept="image/*" /></td></tr>
-							        <tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Date :</b>   <input type="date" id="adate" /></td></tr>
-							</table>
+							<div>
+								<table>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Artwork Name :</b> <input type="text"
+												id="mname" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Medium :</b> <input
+												type="text" id="mmedium" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Size :</b> <input
+												type="number" id="msize" /> </td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Color :</b> <input
+												type="text" id="mcolor" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Signature :</b> <input
+												type="text" id="msignature" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Price :</b> <input
+												type="number" id="mprice" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Description :</b> <input
+												type="text" id="mdescription" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Condition :</b> <input
+												type="text" id="mcondition" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Picture :</b> <input
+												type="file" id="mimg" accept="image/*" /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date :</b> <input
+												type="date" id="mdate" /></td>
+									</tr>
+								</table>
 							</div><br><br>
-                            
-							 <div class="btn">
-                                <input type="button" onclick="modify_art()" value="Modify Artwork Details" 
-								style="width:25%;
+
+							<div class="btn">
+								<input type="button" onclick="modify_col()" value="Modify Artwork Details" style="width:25%;
 								background-color: #03fc6f;
 								border: 2px solid;
 								font-family: Trebuchet MS, Helvetica, sans-serif;
@@ -213,13 +256,12 @@ body{
 								color: #fff;
 								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 								-webkit-transition: all 150ms ease-in-out;
-								transition: all 150ms ease-in-out;"/>
-                            </div>
+								transition: all 150ms ease-in-out;" />
+							</div>
 							<div style="float:right; padding:60px;color:#0f7536;">
-							<b>Want to register a new Artwork? </b>
-							<div class="btn">
-                                <input type="button" onclick="show_Register()" value="Register Artwork" 
-								style="width:65%;
+								<b>Want to register a new Artwork? </b>
+								<div class="btn">
+									<input type="button" onclick="show_register()" value="Register Artwork" style="width:65%;
 								background-color: #521c94;
 								border: 2px solid;
 								font-family: Trebuchet MS, Helvetica, sans-serif;
@@ -232,34 +274,34 @@ body{
 								color: #fff;
 								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 								-webkit-transition: all 150ms ease-in-out;
-								transition: all 150ms ease-in-out;"/>
-                            </div>
+								transition: all 150ms ease-in-out;" />
+								</div>
 							</div>
-                        </form> 
-                    </div>
-					</div>	  
-                </div>
-        </section>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
 
 
-        <!-- view Artwork Details -->
-        <section class="retrieve">
-            <div class="container">
-                <div class="retrieve-content">
-                    <div class="retrieve-image">
-                        <figure><img src="../../images/artwork-view.png" alt="verify image"></figure>
-                    </div>
+		<!-- view Artwork Details -->
+		<section class="retrieve">
+			<div class="container">
+				<div class="retrieve-content">
+					<div class="retrieve-image">
+						<figure><img src="../../images/artwork-view.png" alt="verify image"></figure>
+					</div>
 
-                    <div class="retrieve-form">
-                        <h2 class="form-title">View Artwork Details</h2>
-                        <form  class="register-form" >
-                            <div class="form-group">
-                                <label for="your_name"><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></label>
-                                <input type="text" id="ArtworkIDd" placeholder="Artwork ID"/>
-                            </div>
-				<div class="btn">
-                                <input type="button" onclick="view_Artwork Details()" value="View Artwork Details"
-								style="width:75%;
+					<div class="retrieve-form">
+						<h2 class="form-title">View Artwork Details</h2>
+						<form class="register-form">
+							<div class="form-group">
+								<label for="your_name"><span class="iconify" data-icon="zmdi:format-list-numbered"
+										data-inline="false"></span></label>
+								<input type="text" id="artworkIDd" placeholder="Artwork ID" />
+							</div>
+							<div class="btn">
+								<input type="button" onclick="view_coldetails()" value="View Artwork Details" style="width:75%;
 								background-color: #a8203c;
 								border: 2px solid;
 								font-family: Trebuchet MS, Helvetica, sans-serif;
@@ -272,116 +314,310 @@ body{
 								color: #fff;
 								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 								-webkit-transition: all 150ms ease-in-out;
-								transition: all 150ms ease-in-out;"/>
-                            </div>
-                            <div>
-							<table >
-								
-								<tr><td style="width:50%;height:20px;"> <b>Name :</b>   <div  id="aname" /></td></tr>
-                                				<tr><td style="width:50%;height:20px;"> <b>Medium :</b>  <div id="amdm" /></td></tr>
-								<tr><td style="width:50%;height:20px;"> <b>Size :</b>   <div id="asize" /></td></tr>
-								<tr><td style="width:50%;height:20px;"> <b>Color :</b>    <div id="acolor" /></td></tr>
-                               					<tr><td style="width:50%;height:20px;"> <b>Signature :</b>  <div id="asign" /></td></tr>
-								<tr><td style="width:50%;height:20px;"> <b>Price :</b>   <div id="aprice" /></td></tr>
-								<tr><td style="width:50%;height:20px;"> <b>Description :</b>    <div id="adespt" /></td></tr>
-                                				<tr><td style="width:50%;height:20px;"> <b>Condition :</b>  <div id="acon" /></td></tr>
-								<tr><td style="width:50%;height:20px;"> <b>Picture :</b>   <div id="apic" /></td></tr>
-								<tr><td style="width:50%;height:20px;"> <b>Date :</b>   <div id="adate" /></td></tr>
-							</table>
+								transition: all 150ms ease-in-out;" />
+							</div>
+							<div>
+								<table>
+
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Name :</b>
+											<td id="cname" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Date :</b>
+											<td id="cdate" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Medium :</b>
+											<td id="cmedium" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Size :</b>
+											<td id="csize" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Color :</b>
+											<td id="ccolor" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Signature :</b>
+											<td id="csignature" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Price :</b>
+											<td id="cprice" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Description :</b>
+											<td id="cdescription" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;"> <b>Condition :</b>
+											<td id="ccondition" style="color:green;" />
+										</td>
+										</td>
+									</tr>
+
+								</table>
 							</div><br>
-                            
-                        </form>
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
 
-    </div>
+						</form>
 
-   <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="../../js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.js"></script>
-    <script>	
-	
-	var account;
-	window.addEventListener('load', async () => {
+					</div>
+				</div>
+			</div>
+		</section>
 
-	
-		if (typeof window.ethereum !== 'undefined') { 
-			console.log("MetaMask is Available :) !"); 
+	</div>
+
+	<!-- JS -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.js"></script>
+	<script>
+
+		var account;
+		window.addEventListener('load', async () => {
+
+
+			if (typeof window.ethereum !== 'undefined') {
+				console.log("MetaMask is Available :) !");
 			}
-			
-		// Modern DApp browsers
-		if (window.ethereum) {
-			window.web3 = new Web3(ethereum);
-			
-			// To prevent the page reloading when the MetaMask network changes
-			ethereum.autoRefreshOnNetworkChange = false;
-			
-			// To Capture the account details from MetaMask
-			const accounts = await ethereum.enable();
-			account = accounts[0];
-			
+
+			// Modern DApp browsers
+			if (window.ethereum) {
+				window.web3 = new Web3(ethereum);
+
+				// To prevent the page reloading when the MetaMask network changes
+				ethereum.autoRefreshOnNetworkChange = false;
+
+				// To Capture the account details from MetaMask
+				const accounts = await ethereum.enable();
+				account = accounts[0];
+
 			}
-			
-		// Legacy DApp browsers
-		else if (window.web3) {
-			//window.web3 = new Web3(web3.currentProvider);
-			window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/cbd9dc11b30147e9a2cc974be655ef7c")); 
+
+			// Legacy DApp browsers
+			else if (window.web3) {
+				//window.web3 = new Web3(web3.currentProvider);
+				window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/cbd9dc11b30147e9a2cc974be655ef7c"));
 			}
-			
-		// Non-DApp browsers
-		else {
-			console.log('Non-Ethereum browser detected. Please install MetaMask');
+
+			// Non-DApp browsers
+			else {
+				console.log('Non-Ethereum browser detected. Please install MetaMask');
 			}
-			
-			loadstatus();
-			
-			});
-		
-				
-		    // Function to get the status about ERC-721 Token
-			function loadstatus() {
-					
-				console.log("Invoking Smart Contracts - Status...");
-						
-				//Instantiate and connect to contract address via ABI
-				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
-				
-				//call the "totalSupply" function
-				var result = myContract.methods.totalSupply().call(function (err, result) {
-				
-				if (err) { console.log(err); }
-				if (result) { document.getElementById("tsupply").innerHTML = result; }
-				
-				});
-					
-			
+
+
+		});
+
+
+		// Functions to show and hide appropiate div 
+		function register_col() {
+
+			console.log("Registering Artwork Details");
+
+			//Instantiate and connect to contract address via ABI
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '3000000' });
+
+			var artworkID = document.getElementById("artworkID").value;
+			var name = document.getElementById("name").value;
+			var medium = document.getElementById("medium").value;
+			var size = document.getElementById("size").value;
+			var color = document.getElementById("color").value;
+			var signature = document.getElementById("signature").value;
+			var price = document.getElementById("price").value;
+			var description = document.getElementById("description").value;
+			var condition = document.getElementById("condition").value;
+			var img = document.getElementById("img").value;
+			var date = document.getElementById("date").value;
+
+			//call the "Register Collectible" function
+			var result = myContract.methods.registerCol(artworkID, name, date, medium, size, color, signature, price, description, condition).send(function (err, result) {
+
+				if (err) {
+					console.log(err);
+					var showLink = document.getElementById("etherScanLink");
+					showLink.style.display = "block";
+					document.getElementById("fresult").innerHTML = "Nil";
+					swal({
+						title: "Oops!",
+						text: "Collectible cannot be Registered!",
+						icon: "warning",
+					});
 				}
 
-			
-			// Functions to show and hide appropiate div 
-			function show_issue() {
-			
+				if (result) {
+					var showLink = document.getElementById("etherScanLink");
+					showLink.style.display = "block";
+					document.getElementById("fresult").innerHTML = result;
+					swal({
+						title: "Great!",
+						text: "Collectible Details sent to Blockchain!",
+						icon: "success",
+					});
+				}
+
+			});
+
+		}
+
+		// Function to call the "Modify Collectible" in Deployed Smart Contract
+		function modify_col() {
+
+			console.log("Modifying Collectible Details");
+
+			//Instantiate and connect to contract address via ABI
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '3000000' });
+
+
+			var artworkID = document.getElementById("martworkID").value;
+			var name = document.getElementById("mname").value;
+			var medium = document.getElementById("mmedium").value;
+			var size = document.getElementById("msize").value;
+			var color = document.getElementById("mcolor").value;
+			var signature = document.getElementById("msignature").value;
+			var price = document.getElementById("mprice").value;
+			var description = document.getElementById("mdescription").value;
+			var condition = document.getElementById("mcondition").value;
+			var img = document.getElementById("mimg").value;
+			var date = document.getElementById("mdate").value;
+
+
+
+			//call the "Register Collectible" function
+			var result = myContract.methods.updateCol(artworkID, name, date, medium, size, color, signature, price, description, condition).send(function (err, result) {
+
+				if (err) {
+					console.log(err);
+					document.getElementById("fresult").innerHTML = "Nil";
+					swal({
+						title: "Oops!",
+						text: "Collectible cannot be Registered!",
+						icon: "warning",
+					});
+				}
+
+				if (result) {
+					var showLink = document.getElementById("etherScanLink");
+					showLink.style.display = "block";
+					document.getElementById("fresult").innerHTML = result;
+					swal({
+						title: "Great!",
+						text: "Updated Details sent to Blockchain!",
+						icon: "success",
+					});
+				}
+
+
+			});
+
+		}
+
+
+		// Functions to show and hide appropiate div 
+		function show_register() {
+
 			var modifyDiv = document.getElementById("modifyDiv");
 			modifyDiv.style.display = "none";
 			var issueDiv = document.getElementById("issueDiv");
-			issueDiv.style.display= "block";
-			
-			}
-			
-			function show_modify() {
-			
+			issueDiv.style.display = "block";
+
+		}
+
+		function show_modify() {
+
 			var issueDiv = document.getElementById("issueDiv");
 			issueDiv.style.display = "none";
 			var modifyDiv = document.getElementById("modifyDiv");
 			modifyDiv.style.display = "block";
-			
-			}	
-				
-    </script>  
-	
+
+		}
+		// Functions to call the "View Details" in Deployed Smart Contract
+		function view_coldetails() {
+
+			console.log("Getting Collectible Details");
+
+			//Instantiate and connect to contract address via ABI
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '30000000' });
+
+			var artworkID = document.getElementById("artworkIDd").value;
+
+			//call the "view Collectible Details" function
+			var result = myContract.methods.retrieveCol(artworkID).call(function (err, result) {
+
+				if (err) { console.log(err); }
+				if (result) {
+
+					document.getElementById("cname").innerHTML = result[0];
+					document.getElementById("cdate").innerHTML = result[1];
+					document.getElementById("cmedium").innerHTML = result[2];
+					document.getElementById("csize").innerHTML = result[3];
+					document.getElementById("ccolor").innerHTML = result[4];
+					document.getElementById("csignature").innerHTML = result[5];
+					document.getElementById("cprice").innerHTML = result[6];
+					document.getElementById("cdescription").innerHTML = result[7];
+					document.getElementById("ccondition").innerHTML = result[8];
+
+
+
+
+				}
+
+			});
+
+		}
+
+		function getdetails() {
+
+			console.log("Getting Collectible Details");
+
+			//Instantiate and connect to contract address via ABI
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '30000000' });
+
+			var artworkID = document.getElementById("martworkID").value;
+
+			//call the "view Collectible Details" function
+			var result = myContract.methods.retrieveCol(artworkID).call(function (err, result) {
+
+				if (err) { console.log(err); }
+				if (result) {
+
+					document.getElementById("mname").innerHTML = result[0];
+					document.getElementById("mdate").innerHTML = result[1];
+					document.getElementById("mmedium").innerHTML = result[2];
+					document.getElementById("msize").innerHTML = result[3];
+					document.getElementById("mcolor").innerHTML = result[4];
+					document.getElementById("msignature").innerHTML = result[5];
+					document.getElementById("mprice").innerHTML = result[6];
+					document.getElementById("mdescription").innerHTML = result[7];
+					document.getElementById("mcondition").innerHTML = result[8];
+
+
+
+				}
+
+			});
+
+		}
+	</script>
+
 </body>
+
 </html>
