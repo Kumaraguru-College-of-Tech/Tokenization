@@ -154,9 +154,12 @@
 								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 								-webkit-transition: all 150ms ease-in-out;
 								transition: all 150ms ease-in-out;" />
-								<h5> Transaction ID: <div id="fresult"></div>
-									<h6><a href="https://ropsten.etherscan.io/" target="_blank">Click here to verify in
-											EtherScan</a></h6>
+								<h4> Transaction ID: <div id="fresult" style="color:green;">Nil</div>
+								</h4>
+								<h4 id="etherScanLink1" style="display:none;">
+									<a href="https://ropsten.etherscan.io/" target="_blank">Click here to verify in
+										EtherScan</a>
+								</h4>
 							</div>
 
 							<div style="float:right;color:#0f7536;">
@@ -258,6 +261,12 @@
 								-webkit-transition: all 150ms ease-in-out;
 								transition: all 150ms ease-in-out;" />
 							</div>
+							<h4> Transaction ID: <div id="mresult" style="color:green;">Nil</div>
+							</h4>
+							<h4 id="etherScanLink2" style="display:none;">
+								<a href="https://ropsten.etherscan.io/" target="_blank">Click here to verify in
+									EtherScan</a>
+							</h4>
 							<div style="float:right; padding:60px;color:#0f7536;">
 								<b>Want to register a new Artwork? </b>
 								<div class="btn">
@@ -389,6 +398,7 @@
 	<!-- JS -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="../../js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.js"></script>
 	<script>
 
@@ -434,7 +444,7 @@
 			console.log("Registering Artwork Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
 
 			var artworkID = document.getElementById("artworkID").value;
 			var name = document.getElementById("name").value;
@@ -453,8 +463,6 @@
 
 				if (err) {
 					console.log(err);
-					var showLink = document.getElementById("etherScanLink");
-					showLink.style.display = "block";
 					document.getElementById("fresult").innerHTML = "Nil";
 					swal({
 						title: "Oops!",
@@ -464,7 +472,7 @@
 				}
 
 				if (result) {
-					var showLink = document.getElementById("etherScanLink");
+					var showLink = document.getElementById("etherScanLink1");
 					showLink.style.display = "block";
 					document.getElementById("fresult").innerHTML = result;
 					swal({
@@ -484,7 +492,7 @@
 			console.log("Modifying Collectible Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
 
 
 			var artworkID = document.getElementById("martworkID").value;
@@ -515,7 +523,7 @@
 				}
 
 				if (result) {
-					var showLink = document.getElementById("etherScanLink");
+					var showLink = document.getElementById("etherScanLink2");
 					showLink.style.display = "block";
 					document.getElementById("fresult").innerHTML = result;
 					swal({
@@ -555,7 +563,7 @@
 			console.log("Getting Collectible Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '30000000' });
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
 
 			var artworkID = document.getElementById("artworkIDd").value;
 
@@ -589,7 +597,7 @@
 			console.log("Getting Collectible Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '5000000', gas: '30000000' });
+			var myContract = new web3.eth.Contract(col_abi, col_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
 
 			var artworkID = document.getElementById("martworkID").value;
 
