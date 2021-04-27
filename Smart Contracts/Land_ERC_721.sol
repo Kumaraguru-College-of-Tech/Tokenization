@@ -7,7 +7,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
  * @title        Land
  * @author       K.Sowbharnika
  * Created       25.12.2020
- * Updated       03.01.2021
+ * Updated       27.04.2021
  */
 
 contract Lands is ERC721{
@@ -28,15 +28,15 @@ contract Lands is ERC721{
      
       uint256 Land_Size;            /* Land Size */
      
-      string Land_Bound_Det;         /*Land Boundary Details*/
+      string Land_Bound_Det;         /Land Boundary Details/
       
-      string Land_Lat_Det;           /*Land Latitude Details*/
+      string Land_Lat_Det;           /Land Latitude Details/
       
-      string Land Long_Det;          /*Land Longitude Details*/
+      string Land_Long_Det;          /Land Longitude Details/
      
       uint256 Land_Patta_No;        /* Land Patta Number */
      
-      uint256 Land_Doc_No;          /*Land Document Number*/
+      uint256 Land_Doc_No;          /Land Document Number/
      
       address Land_Owner_Adr;       /* Land Owner Address */
      
@@ -47,10 +47,13 @@ contract Lands is ERC721{
     /**
      * @dev Create the Token by Passing the Name and Symbol to the ERC721 Constructor
      */
-    constructor() ERC721("LandToken","KCTL") public {
-        lan.Land_Id                 = 0;
+    constructor() ERC721("LandToken","KCTL")  {
+        lan.Land_Id                 = 2021000;
     }
-
+    modifier isAuthorized {
+      require(msg.sender == 0x392bE01aE4Eb8a9998411bCA1e0dBaF1fA10fDfC, "Only Registrar can Register Land.");
+      _;
+    }
     /** 
      * @dev Function to issue a Land
      * @param ui_Land_Type                 Land Type
@@ -68,7 +71,7 @@ contract Lands is ERC721{
 
    
     function issueLand(string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, string memory ui_Land_Lat_Det, string memory ui_Land_Long_Det, uint256 ui_Land_Patta_No,
-                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public {
+                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public isAuthorized{
                              
                              lan.Land_Id                 += 1;
                              lan.Land_Type               = ui_Land_Type;
@@ -139,8 +142,8 @@ contract Lands is ERC721{
      * @param ui_Land_Owner_Adr            Land Owner Address
     */
     
-    function updateLand(uint256 ui_Land_Token, string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, string memory ui_Land_Lat_det, string memory ui_Land_Long_det, uint256 ui_Land_Patta_No,
-                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public {
+    function updateLand(uint256 ui_Land_Token, string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, string memory ui_Land_Lat_Det, string memory ui_Land_Long_Det, uint256 ui_Land_Patta_No,
+                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public isAuthorized{
                              
                             Land storage Lid = LandList[ui_Land_Token];  
        
