@@ -959,7 +959,7 @@ var cert_abi2 = [
 // Certificate ERC-1155 contract address
 var cert_contractAddress2 = '0xF685fbc4dbA695680139240204925Ba9Bf759304';
 
-// Land ERC-721 ABI
+// ERC-721 ABI
 var land_abi = [
 	{
 		"anonymous": false,
@@ -1482,9 +1482,8 @@ var land_abi = [
 		"type": "function"
 	}
 ]
-
 // Land ERC-721 Contract address
-var land_contractaddress = '0x975fC912e7cDE4838ab229a2a44AF853652A94990';
+var land_contractaddress = '0x6f9aF1b0475EcB5BAdAe6F4Ba341159c53BDe5Fc';
 
 // Land ERC-1155 contract address
 var land_contract_address_1155 = '0xbF8CE6E21c6DFE32a9B67AD0A4cF8f9994D5c93c';
