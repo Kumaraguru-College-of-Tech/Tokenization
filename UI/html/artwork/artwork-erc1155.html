@@ -260,6 +260,12 @@
 								-webkit-transition: all 150ms ease-in-out;
 								transition: all 150ms ease-in-out;" />
 							</div>
+							<h4> Transaction ID: <div id="mresult" style="color:green;">Nil</div>
+							</h4>
+							<h4 id="etherScanLink2" style="display:none;">
+								<a href="https://ropsten.etherscan.io/" target="_blank">Click here to verify in
+									EtherScan</a>
+							</h4>
 							<div style="float:right; padding:60px;color:#0f7536;">
 								<b>Want to register a new Artwork? </b>
 								<div class="btn">
@@ -493,12 +499,12 @@
 
 
 
-			//call the "Register Collectible" function
+			//call the "Update Collectible" function
 			var result = myContract.methods.updateCol(artworkID, name, date, medium, size, color, signature, price, description, condition).send(function (err, result) {
 
 				if (err) {
 					console.log(err);
-					document.getElementById("fresult").innerHTML = "Nil";
+					document.getElementById("mresult").innerHTML = "Nil";
 					swal({
 						title: "Oops!",
 						text: "Collectible cannot be Registered!",
@@ -507,9 +513,9 @@
 				}
 
 				if (result) {
-					var showLink = document.getElementById("etherScanLink");
+					var showLink = document.getElementById("etherScanLink2");
 					showLink.style.display = "block";
-					document.getElementById("fresult").innerHTML = result;
+					document.getElementById("mresult").innerHTML = result;
 					swal({
 						title: "Great!",
 						text: "Updated Details sent to Blockchain!",

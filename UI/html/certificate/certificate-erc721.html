@@ -469,7 +469,7 @@
 			var tokenID = document.getElementById("mtokenID").value;
 
 
-			//call the "issue certificate" function
+			//call the "update certificate" function
 			var result = myContract.methods.updateCert(tokenID, name, mid, dept, inst, cls, issdate, address).send(function (err, result) {
 
 				if (err) {
