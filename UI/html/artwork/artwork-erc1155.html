@@ -1,7 +1,7 @@
 <!-- 
     Author       : Preetha P and Ramaguru R
     Date Created : 31.12.2020
-    Date Updated : 03.01.2021
+    Date Updated : 27.04.2021
 -->
 
 
@@ -195,7 +195,7 @@
 									<tr>
 										<td><input type="text" id="martworkID" placeholder="Enter Artwork ID" /></td>
 										<td><input type="button" class="iconify" data-icon="zmdi:search"
-											style="height:5%;width:7%" onclick="getdetails()" /></td>
+												style="height:5%;width:7%" onclick="getdetails()" /></td>
 									</tr>
 								</table>
 							</div>
@@ -447,8 +447,6 @@
 
 				if (err) {
 					console.log(err);
-					var showLink = document.getElementById("etherScanLink");
-					showLink.style.display = "block";
 					document.getElementById("fresult").innerHTML = "Nil";
 					swal({
 						title: "Oops!",
