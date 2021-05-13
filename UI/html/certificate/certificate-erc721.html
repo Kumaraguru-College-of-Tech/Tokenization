@@ -71,7 +71,7 @@
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:format-list-numbered"
 										data-inline="false"></span></label>
-								<input type="text" id="tokenID" placeholder="Certificate ID" />
+								<input type="number" min="1" id="tokenID" placeholder="Certificate ID" />
 							</div>
 
 							<div class="form-group">
@@ -179,7 +179,7 @@
 							<div class="form-group">
 								<table>
 									<tr>
-										<td><input type="text" id="mtokenID" placeholder="Enter Certificate ID" /></td>
+										<td><input type="number" id="mtokenID" min="1" placeholder="Enter Certificate ID" /></td>
 										<td><input type="button" class="iconify" data-icon="zmdi:search"
 												style="height:5%;width:7%" onclick="getdetails()" /></td>
 									</tr>
@@ -197,25 +197,29 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Institution :</b> <input
-												type="text" id="minst" /> </td>
+												type="text" id="minst" readonly /> </td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Department :</b> <input
-												type="text" id="mdept" /></td>
+												type="text" id="mdept" readonly /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Classification :</b>
-											<input type="text" id="mcls" />
+											<input type="text" id="mcls" readonly />
 										</td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date of Issue :</b>
-											<input type="date" id="missdate" />
+											<input type="date" id="missdate" readonly />
 										</td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Holder Wallet Address
-												:</b> <input type="text" id="mholder" /></td>
+												:</b> <input type="text" id="mholder" readonly /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
+												:</b> <input type="textarea" id="mreason" /></td>
 									</tr>
 									<tr>
 										<td>
@@ -451,6 +455,42 @@
 
 		}
 
+		function getdetails() {
+
+			console.log("Getting College degree Certificate Details");
+
+			//Instantiate and connect to contract address via ABI
+			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
+
+			var tokenID = document.getElementById("mtokenID").value;
+
+			//call the "view certificate" function
+			var result = myContract.methods.retrieveCert(tokenID).call(function (err, result) {
+
+				if (err) { console.log(err); }
+				if (result) {
+
+					document.getElementById("mname").value = result[0];
+					document.getElementById("mid").value = result[1];
+					document.getElementById("mdept").value = result[2];
+					document.getElementById("minst").value = result[3];
+					document.getElementById("mcls").value = result[4];
+					document.getElementById("missdate").value = result[5];
+					document.getElementById("mholder").value = result[6];
+					if (result[6] == "0x0000000000000000000000000000000000000000") {
+						document.getElementById("msg2").innerHTML = "No Certificate is issued with the given ID!";
+					}
+					else {
+						document.getElementById("msg2").innerHTML = "Here is the details!";
+					}
+
+				}
+
+			});
+
+		}
+
+
 		// Function to call the "Modify Certificate" in Deployed Smart Contract
 		function modify_cert() {
 
@@ -467,10 +507,11 @@
 			var cls = document.getElementById("mcls").value;
 			var address = document.getElementById("mholder").value;
 			var tokenID = document.getElementById("mtokenID").value;
+			var reason = document.getElementById("mreason").value;
 
 
 			//call the "update certificate" function
-			var result = myContract.methods.updateCert(tokenID, name, mid, dept, inst, cls, issdate, address).send(function (err, result) {
+			var result = myContract.methods.updateCert(tokenID, name, mid, dept, inst, cls, issdate, address, reason).send(function (err, result) {
 
 				if (err) {
 					console.log(err);
@@ -551,40 +592,6 @@
 
 		}
 
-		function getdetails() {
-
-			console.log("Getting College degree Certificate Details");
-
-			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
-
-			var tokenID = document.getElementById("mtokenID").value;
-
-			//call the "view certificate" function
-			var result = myContract.methods.retrieveCert(tokenID).call(function (err, result) {
-
-				if (err) { console.log(err); }
-				if (result) {
-
-					document.getElementById("mname").value = result[0];
-					document.getElementById("mid").value = result[1];
-					document.getElementById("mdept").value = result[2];
-					document.getElementById("minst").value = result[3];
-					document.getElementById("mcls").value = result[4];
-					document.getElementById("missdate").value = result[5];
-					document.getElementById("mholder").value = result[6];
-					if (result[6] == "0x0000000000000000000000000000000000000000") {
-						document.getElementById("msg2").innerHTML = "No Certificate is issued with the given ID!";
-					}
-					else {
-						document.getElementById("msg2").innerHTML = "Here is the details!";
-					}
-
-				}
-
-			});
-
-		}
 
 	</script>
 

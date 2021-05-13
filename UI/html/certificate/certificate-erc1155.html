@@ -70,7 +70,7 @@
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:format-list-numbered"
 										data-inline="false"></span></label>
-								<input type="number" id="tokenID" placeholder="Certificate ID" />
+								<input type="number" min="1" id="tokenID" placeholder="Certificate ID" />
 							</div>
 
 							<div class="form-group">
@@ -176,7 +176,7 @@
 							<div class="form-group">
 								<table>
 									<tr>
-										<td><input type="number" id="mtokenID" placeholder="Enter Certificate ID"
+										<td><input type="number" min="1" id="mtokenID" placeholder="Enter Certificate ID"
 												style="font-size:19px;" /></td>
 										<td><input type="button" class="iconify" data-icon="zmdi:search"
 												style="height:5%;width:7%" onclick="getdetails()" /></td>
@@ -198,25 +198,29 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Institution :</b> <input
-												type="text" id="minst" /> </td>
+												type="text" id="minst" readonly/> </td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Department :</b> <input
-												type="text" id="mdept" /></td>
+												type="text" id="mdept" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Classification :</b>
-											<input type="text" id="mcls" />
+											<input type="text" id="mcls" readonly/>
 										</td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date of Issue :</b>
-											<input type="date" id="missdate" />
+											<input type="date" id="missdate" readonly/>
 										</td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Holder Wallet Address
-												:</b> <input type="text" id="mholder" /></td>
+												:</b> <input type="text" id="mholder" readonly/></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
+												:</b> <input type="textarea" id="mreason" /></td>
 									</tr>
 								</table>
 							</div><br><br>
@@ -544,6 +548,7 @@
 			var cls = document.getElementById("mcls").value;
 			var address = document.getElementById("mholder").value;
 			var tokenID = document.getElementById("mtokenID").value;
+			// var reason = document.getElementById("mreason").value;
 
 
 			//call the "update certificate" function

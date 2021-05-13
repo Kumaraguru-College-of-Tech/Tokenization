@@ -280,6 +280,11 @@ var cert_abi = [
 				"internalType": "address",
 				"name": "ui_Holder_addr",
 				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "ui_reason",
+				"type": "string"
 			}
 		],
 		"name": "updateCert",
@@ -425,11 +430,6 @@ var cert_abi = [
 				"internalType": "address",
 				"name": "Holder_addr",
 				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "msg",
-				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -488,7 +488,7 @@ var cert_abi = [
 	}
 ]
 // Certificate ERC-721 contract address
-var cert_contractaddress = '0x460f398C40771d82700Ad4B4d3be03682fDdB3A1';
+var cert_contractaddress = '0xc3CC94BC77E42d4a2DE4618CAffB655e9D552108';
 	
 // Certificate ERC-1155 ABI
 var cert_abi2 = [
