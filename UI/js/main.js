@@ -2216,7 +2216,7 @@ var col_abi = [
 			},
 			{
 				"internalType": "string",
-				"name": "ui_Art_Year",
+				"name": "ui_Art_Created_Date",
 				"type": "string"
 			},
 			{
@@ -2277,7 +2277,7 @@ var col_abi = [
 			},
 			{
 				"internalType": "string",
-				"name": "Art_Year",
+				"name": "Art_Created_Date",
 				"type": "string"
 			},
 			{
@@ -2292,11 +2292,6 @@ var col_abi = [
 			},
 			{
 				"internalType": "string",
-				"name": "ui_Art_Color",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
 				"name": "Art_Sign",
 				"type": "string"
 			},
@@ -2304,11 +2299,6 @@ var col_abi = [
 				"internalType": "uint256",
 				"name": "Art_Price",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "Art_Desc",
-				"type": "string"
 			},
 			{
 				"internalType": "string",
@@ -2476,7 +2466,7 @@ var col_abi = [
 			},
 			{
 				"internalType": "string",
-				"name": "ui_Art_Year",
+				"name": "ui_Art_Created_Date",
 				"type": "string"
 			},
 			{
@@ -2513,6 +2503,11 @@ var col_abi = [
 				"internalType": "string",
 				"name": "ui_Art_Cond",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "ui_reason",
+				"type": "string"
 			}
 		],
 		"name": "updateCol",
@@ -2523,7 +2518,7 @@ var col_abi = [
 ]
 
 // Artwork ERC-721 contract address
-var col_contractaddress = '0xe2B049611BB052f6095f215DE607f2A94FC0D14a';	
+var col_contractaddress = '0xF42C8fB8Ad19c1987ff92B59C3fC2b1d3a302b06';	
 
 // Artwork ERC-1155 contract address
 var artwork_contract_address = '0xdF8312460Ae3457f510E2084D2E5597CCc1E8902';

@@ -21,7 +21,7 @@ contract Collectibles is ERC1155 {
       
       string Art_Name;                  /* ArtWork Name */
       
-      string Art_Year;                  /* ArtWork Created Year */
+      string Art_Created_Date;          /* ArtWork Created Date */
       
       string Art_Medium;                /* ArtWork Created Medium or Material  */
       
@@ -46,12 +46,16 @@ contract Collectibles is ERC1155 {
      */
     constructor() ERC1155("KCTA") public {}
     
-    
+    modifier isOwner(uint256 ui_Art_Token_ID) {
+      require(msg.sender == ownerOf(ui_Art_Token_ID), "Only Art Owner can modify the details.");
+      _;
+    }
+
     /** 
      * @dev Function to Register Collectible Details
      * @param ui_Art_Token_ID             ArtWork Unique Token ID
      * @param ui_Art_Name                 ArtWork Name
-     * @param ui_Art_Year                 ArtWork Created Year
+     * @param ui_Art_Created_Date         ArtWork Created Date
      * @param ui_Art_Medium               ArtWork Created Medium or Material 
      * @param ui_Art_Size                 ArtWork Size(inch or feet or meter)
      * @param ui_Art_Color                ArtWork Color
@@ -61,12 +65,12 @@ contract Collectibles is ERC1155 {
      * @param ui_Art_Cond                 ArtWork Current Condition
     */
  
-    function registerCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Year, string memory ui_Art_Medium, uint ui_Art_Size, 
+    function registerCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Created_Date, string memory ui_Art_Medium, uint ui_Art_Size, 
                          string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) public {
                              
                              col.Art_Token_ID           = ui_Art_Token_ID;
                              col.Art_Name               = ui_Art_Name;
-                             col.Art_Year               = ui_Art_Year;
+                             col.Art_Created_Date       = ui_Art_Created_Date;
                              col.Art_Medium             = ui_Art_Medium;
                              col.Art_Size               = ui_Art_Size;
                              col.Art_Color              = ui_Art_Color;
@@ -85,47 +89,36 @@ contract Collectibles is ERC1155 {
       * @dev Function to  Retrieve Collectible Details by specifying the Artwork ID
       * @param ui_Art_Token_ID          ArtWork Unique Token ID
       * @param Art_Name                 ArtWork Name
-      * @param Art_Year                 ArtWork Created Year
+      * @param Art_Created_Date         ArtWork Created Date
       * @param Art_Medium               ArtWork Created Medium or Material 
       * @param Art_Size                 ArtWork Size(inch or feet or meter)
-     
+      * @param Art_Sign                 Signature Position in the ArtWork
+      * @param Art_Price                ArtWork Price
+      * @param Art_Cond                 ArtWork Current Condition
+      * 
      */
     
-    function retrieveCol(uint256 ui_Art_Token_ID) public view returns ( string memory Art_Name, string memory Art_Year, string memory Art_Medium, uint Art_Size) {
+    function retrieveCol(uint256 ui_Art_Token_ID) public view returns ( string memory Art_Name, string memory Art_Created_Date, string memory Art_Medium, uint Art_Size, 
+                         string memory Art_Sign, uint Art_Price, string memory Art_Cond) {
        
        Collectible storage Aid = ColList[ui_Art_Token_ID];  
        return(Aid.Art_Name,
-              Aid.Art_Year,
+              Aid.Art_Created_Date,
               Aid.Art_Medium,
-              Aid.Art_Size
+              Aid.Art_Size,
+              Aid.Art_Sign,
+              Aid.Art_Price,
+              Aid.Art_Cond
               );
        
     }
-    /** 
-      * @param Art_Color                ArtWork Color
-      * @param Art_Sign                 Signature Position in the ArtWork
-      * @param Art_Price                ArtWork Price
-      * @param Art_Desc                 ArtWork Description
-      * @param Art_Cond                 ArtWork Current Condition
-     */
-     
-     
-     
-    function retrieveCol2(uint256 ui_Art_Token_ID) public view returns( string memory Art_Color, string memory Art_Sign, uint Art_Price, string memory Art_Desc, string memory Art_Cond) {
-                     
-        Collectible storage Aid = ColList[ui_Art_Token_ID];  
-        return(Aid.Art_Color,
-              Aid.Art_Sign,
-              Aid.Art_Price,
-              Aid.Art_Desc,
-              Aid.Art_Cond
-              );
-    }          
+    
+    
     /** 
      * @dev Function to Update Collectible Details
      * @param ui_Art_Token_ID             ArtWork Unique Token ID
      * @param ui_Art_Name                 ArtWork Name
-     * @param ui_Art_Year                 ArtWork Created Year
+     * @param ui_Art_Created_Date         ArtWork Created Date
      * @param ui_Art_Medium               ArtWork Created Medium or Material 
      * @param ui_Art_Size                 ArtWork Size(inch or feet or meter)
      * @param ui_Art_Color                ArtWork Color
@@ -135,12 +128,13 @@ contract Collectibles is ERC1155 {
      * @param ui_Art_Cond                 ArtWork Current Condition
     */
  
-    function updateCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Year, string memory ui_Art_Medium, uint ui_Art_Size, 
-                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) public {
+    function updateCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Created_Date, string memory ui_Art_Medium, uint ui_Art_Size, 
+                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) 
+                         public isOwner(ui_Art_Token_ID){
                              
                              col.Art_Token_ID           = ui_Art_Token_ID;
                              col.Art_Name               = ui_Art_Name;
-                             col.Art_Year               = ui_Art_Year;
+                             col.Art_Created_Date       = ui_Art_Created_Date;
                              col.Art_Medium             = ui_Art_Medium;
                              col.Art_Size               = ui_Art_Size;
                              col.Art_Color              = ui_Art_Color;

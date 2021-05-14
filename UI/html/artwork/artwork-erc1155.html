@@ -39,6 +39,9 @@
 			font-variant: normal;
 			text-transform: capitalize;
 		}
+		input[readonly] {
+			background-color: rgba(76, 65, 65, 0.102) !important;
+		}
 	</style>
 </head>
 
@@ -80,9 +83,6 @@
 								<input type="text" id="name" placeholder="Artwork Name" />
 							</div>
 
-
-
-
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:codepen"
 										data-inline="false"></span></span></label>
@@ -101,7 +101,6 @@
 										data-inline="false"></span></i></label>
 								<input type="text" id="color" placeholder="Color" />
 							</div>
-
 
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:comment-edit"
@@ -225,19 +224,19 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Medium :</b> <input
-												type="text" id="mmedium" /></td>
+												type="text" id="mmedium" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Size :</b> <input
-												type="number" id="msize" /> </td>
+												type="number" id="msize" readonly /> </td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Color :</b> <input
-												type="text" id="mcolor" /></td>
+												type="text" id="mcolor" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Signature :</b> <input
-												type="text" id="msignature" /></td>
+												type="text" id="msignature" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Price :</b> <input
@@ -257,7 +256,7 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date :</b> <input
-												type="date" id="mdate" /></td>
+												type="date" id="mdate" readonly/></td>
 									</tr>
 								</table>
 							</div><br><br>

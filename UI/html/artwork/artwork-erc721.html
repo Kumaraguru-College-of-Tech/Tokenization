@@ -39,6 +39,10 @@
 			font-variant: normal;
 			text-transform: capitalize;
 		}
+
+		input[readonly] {
+			background-color: rgba(76, 65, 65, 0.102) !important;
+		}
 	</style>
 </head>
 
@@ -79,9 +83,6 @@
 										data-inline="false"></span></i></label>
 								<input type="text" id="name" placeholder="Artwork Name" />
 							</div>
-
-
-
 
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:codepen"
@@ -193,12 +194,13 @@
 							<div class="form-group">
 								<table>
 									<tr>
-										<td><input type="number" min="1" id="martworkID" placeholder="Enter Artwork ID" /></td>
+										<td><input type="number" min="1" id="martworkID"
+												placeholder="Enter Artwork ID" /></td>
 										<!-- <td><input type="button" class="iconify" data-icon="zmdi:search"
 												style="height:5%;width:7%" onclick="getdetails()" /></td> -->
-												<td>
-													<div class="btn">
-														<input type="button" onclick="getdetails()" value="Get Details" style="
+										<td>
+											<div class="btn">
+												<input type="button" onclick="getdetails()" value="Get Details" style="
 																			background-color: #06806ec7;
 																			border: 2px solid;
 																			font-family: Trebuchet MS, Helvetica, sans-serif;
@@ -212,8 +214,8 @@
 																			box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
 																			-webkit-transition: all 150ms ease-in-out;
 																			transition: all 150ms ease-in-out;" />
-													</div>
-												</td>
+											</div>
+										</td>
 									</tr>
 								</table>
 							</div>
@@ -225,19 +227,19 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Medium :</b> <input
-												type="text" id="mmedium" /></td>
+												type="text" id="mmedium" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Size :</b> <input
-												type="number" id="msize" /> </td>
+												type="number" id="msize" readonly/> </td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Color :</b> <input
-												type="text" id="mcolor" /></td>
+												type="text" id="mcolor" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Signature :</b> <input
-												type="text" id="msignature" /></td>
+												type="text" id="msignature" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Price :</b> <input
@@ -257,7 +259,7 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date :</b> <input
-												type="date" id="mdate" /></td>
+												type="date" id="mdate" readonly/></td>
 									</tr>
 								</table>
 							</div><br><br>
@@ -542,7 +544,7 @@
 				if (result) {
 					var showLink = document.getElementById("etherScanLink2");
 					showLink.style.display = "block";
-					document.getElementById("fresult").innerHTML = result;
+					document.getElementById("mresult").innerHTML = result;
 					swal({
 						title: "Great!",
 						text: "Updated Details sent to Blockchain!",
@@ -599,9 +601,6 @@
 					document.getElementById("cprice").innerHTML = result[6];
 					document.getElementById("cdescription").innerHTML = result[7];
 					document.getElementById("ccondition").innerHTML = result[8];
-
-
-
 
 				}
 

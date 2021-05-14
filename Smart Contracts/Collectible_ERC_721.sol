@@ -1,4 +1,4 @@
-pragma solidity >=0.4.22 <0.7.0;
+pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
 
@@ -20,7 +20,7 @@ contract Collectibles is ERC721{
       
       string Art_Name;                  /* ArtWork Name */
       
-      string Art_Year;                  /* ArtWork Created Year */
+      string Art_Created_Date;          /* ArtWork Created Date */
       
       string Art_Medium;                /* ArtWork Created Medium or Material  */
       
@@ -35,6 +35,8 @@ contract Collectibles is ERC721{
       string Art_Desc;                  /* ArtWork Description */
       
       string Art_Cond;                  /* ArtWork Current Condition */
+      
+      string Modify_Reason;             /* Reason for Modification */
 
      
     }
@@ -45,12 +47,16 @@ contract Collectibles is ERC721{
      */
     constructor() ERC721("ArtCoin","KCTA") public {}
     
+     modifier isOwner(uint256 ui_Art_Token_ID) {
+      require(msg.sender == ownerOf(ui_Art_Token_ID), "Only Art Owner can modify the details.");
+      _;
+    }
     
     /** 
      * @dev Function to Register Collectible Details
      * @param ui_Art_Token_ID             ArtWork Unique Token ID
      * @param ui_Art_Name                 ArtWork Name
-     * @param ui_Art_Year                 ArtWork Created Year
+     * @param ui_Art_Created_Date                 ArtWork Created Date
      * @param ui_Art_Medium               ArtWork Created Medium or Material 
      * @param ui_Art_Size                 ArtWork Size(inch or feet or meter)
      * @param ui_Art_Color                ArtWork Color
@@ -60,12 +66,12 @@ contract Collectibles is ERC721{
      * @param ui_Art_Cond                 ArtWork Current Condition
     */
  
-    function registerCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Year, string memory ui_Art_Medium, uint ui_Art_Size, 
+    function registerCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Created_Date, string memory ui_Art_Medium, uint ui_Art_Size, 
                          string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) public {
                              
                              col.Art_Token_ID           = ui_Art_Token_ID;
                              col.Art_Name               = ui_Art_Name;
-                             col.Art_Year               = ui_Art_Year;
+                             col.Art_Created_Date               = ui_Art_Created_Date;
                              col.Art_Medium             = ui_Art_Medium;
                              col.Art_Size               = ui_Art_Size;
                              col.Art_Color              = ui_Art_Color;
@@ -83,7 +89,7 @@ contract Collectibles is ERC721{
       * @dev Function to Retrieve Collectible Details by specifying the Artwork ID
       * @param ui_Art_Token_ID          ArtWork Unique Token ID
       * @param Art_Name                 ArtWork Name
-      * @param Art_Year                 ArtWork Created Year
+      * @param Art_Created_Date                 ArtWork Created Date
       * @param Art_Medium               ArtWork Created Medium or Material 
       * @param Art_Size                 ArtWork Size(inch or feet or meter)
       * @param Art_Sign                 Signature Position in the ArtWork
@@ -92,12 +98,12 @@ contract Collectibles is ERC721{
       * 
      */
     
-    function retrieveCol(uint256 ui_Art_Token_ID) public view returns ( string memory Art_Name, string memory Art_Year, string memory Art_Medium, uint Art_Size, 
+    function retrieveCol(uint256 ui_Art_Token_ID) public view returns ( string memory Art_Name, string memory Art_Created_Date, string memory Art_Medium, uint Art_Size, 
                          string memory Art_Sign, uint Art_Price, string memory Art_Cond) {
        
        Collectible storage Aid = ColList[ui_Art_Token_ID];  
        return(Aid.Art_Name,
-              Aid.Art_Year,
+              Aid.Art_Created_Date,
               Aid.Art_Medium,
               Aid.Art_Size,
               Aid.Art_Sign,
@@ -112,7 +118,7 @@ contract Collectibles is ERC721{
      * @dev Function to Update Collectible Details
      * @param ui_Art_Token_ID             ArtWork Unique Token ID
      * @param ui_Art_Name                 ArtWork Name
-     * @param ui_Art_Year                 ArtWork Created Year
+     * @param ui_Art_Created_Date                 ArtWork Created Date
      * @param ui_Art_Medium               ArtWork Created Medium or Material 
      * @param ui_Art_Size                 ArtWork Size(inch or feet or meter)
      * @param ui_Art_Color                ArtWork Color
@@ -120,14 +126,17 @@ contract Collectibles is ERC721{
      * @param ui_Art_Price                ArtWork Price
      * @param ui_Art_Desc                 ArtWork Description
      * @param ui_Art_Cond                 ArtWork Current Condition
+     * @param ui_reason                   Reason for Modification
     */
  
-    function updateCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Year, string memory ui_Art_Medium, uint ui_Art_Size, 
-                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) public {
+    function updateCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Created_Date, string memory ui_Art_Medium, uint ui_Art_Size, 
+                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond, string memory ui_reason) 
+                         public isOwner(ui_Art_Token_ID) {
+                             
                              
                              col.Art_Token_ID           = ui_Art_Token_ID;
                              col.Art_Name               = ui_Art_Name;
-                             col.Art_Year               = ui_Art_Year;
+                             col.Art_Created_Date               = ui_Art_Created_Date;
                              col.Art_Medium             = ui_Art_Medium;
                              col.Art_Size               = ui_Art_Size;
                              col.Art_Color              = ui_Art_Color;
@@ -135,10 +144,9 @@ contract Collectibles is ERC721{
                              col.Art_Price              = ui_Art_Price;
                              col.Art_Desc               = ui_Art_Desc;
                              col.Art_Cond               = ui_Art_Cond;
+                             col.Modify_Reason          = ui_reason;
                              
-                             ColList[ui_Art_Token_ID]         = col;
-    
-        
+                             ColList[ui_Art_Token_ID]   = col;
     }
     
 }
