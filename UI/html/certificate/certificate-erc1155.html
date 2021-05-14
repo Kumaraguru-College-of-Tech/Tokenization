@@ -39,6 +39,34 @@
 			font-variant: normal;
 			text-transform: capitalize;
 		}
+		select.custom {
+			appearance: none;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			position: relative;
+			padding: 0.3em 0.5em 0.3em 0.5em;
+			font-size: 16px;
+			line-height: 1.5;
+			border-radius: 1em;
+			background-repeat: no-repeat;
+		}
+
+		select.custom.gradient {
+			color: black;
+			text-shadow: none;
+			background-color: white;
+			border-color: rgb(49, 4, 4);
+			background-image: linear-gradient(45deg, transparent 50%, #381605 0%),
+				linear-gradient(135deg, #291003 50%, transparent 0%),
+				linear-gradient(#ffffff, #ffffff);
+			background-position: right 12px bottom 15px, right 6px bottom 15px, center;
+			background-repeat: no-repeat;
+			background-size: 6px 6px, 6px 6px, cover;
+		}
+
+		input[readonly] {
+			background-color: rgba(76, 65, 65, 0.102) !important;
+		}
 	</style>
 </head>
 
@@ -88,13 +116,30 @@
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:balance"
 										data-inline="false"></span></label>
-								<input type="text" id="inst" placeholder="Institution" />
+								&nbsp;&nbsp;
+								<select class='custom gradient' id="inst">
+									<option value="Kumaraguru College of Technology" selected>Kumaraguru College of
+										Technology</option>
+									<option value="Sri Ramakrishna College of Engineering">Sri Ramakrishna College of
+										Engineering</option>
+									<option value="Sri Krishna Institute of Technology">Sri Krishna Institute of
+										Technology</option>
+									<option value="PSG College of Technology">PSG College of Technology</option>
+								</select>
 							</div>
 
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:assignment-check"
 										data-inline="false"></span></label>
-								<input type="text" id="dept" placeholder="Department (eg: B.E. Civil Engineering)" />
+								&nbsp;&nbsp;
+								<select class='custom gradient' id="dept">
+									<option value="Computer Science and Engineering">Computer Science and Engineering
+									</option>
+									<option value="Information Technology">Information Technology</option>
+									<option value="Electronic and Communication Engineering">Electronic and
+										Communication Engineering</option>
+									<option value="Mechanical Engineering">Mechanical Engineering</option>
+								</select>
 							</div>
 
 							<div class="form-group">
@@ -176,10 +221,28 @@
 							<div class="form-group">
 								<table>
 									<tr>
-										<td><input type="number" min="1" id="mtokenID" placeholder="Enter Certificate ID"
-												style="font-size:19px;" /></td>
-										<td><input type="button" class="iconify" data-icon="zmdi:search"
-												style="height:5%;width:7%" onclick="getdetails()" /></td>
+										<td><input type="number" min="1" id="mtokenID"
+												placeholder="Enter Certificate ID" style="font-size:19px;" /></td>
+										<!-- <td><input type="button" class="iconify" data-icon="zmdi:search"
+												style="height:5%;width:7%" onclick="getdetails()" /></td> -->
+										<td>
+											<div class="btn">
+												<input type="button" onclick="getdetails()" value="Get Details" style="
+																	background-color: #06806ec7;
+																	border: 2px solid;
+																	font-family: Trebuchet MS, Helvetica, sans-serif;
+																	border-radius: 0.6em;
+																	color: white;
+																	padding: 10px 15px;
+																	text-decoration: none;
+																	margin: 4px 2px;
+																	cursor: pointer;
+																	color: #fff;
+																	box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+																	-webkit-transition: all 150ms ease-in-out;
+																	transition: all 150ms ease-in-out;" />
+											</div>
+										</td>
 									</tr>
 								</table>
 							</div>
@@ -198,25 +261,25 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Institution :</b> <input
-												type="text" id="minst" readonly/> </td>
+												type="text" id="minst" readonly /> </td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Department :</b> <input
-												type="text" id="mdept" readonly/></td>
+												type="text" id="mdept" readonly /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Classification :</b>
-											<input type="text" id="mcls" readonly/>
+											<input type="text" id="mcls" readonly />
 										</td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date of Issue :</b>
-											<input type="date" id="missdate" readonly/>
+											<input type="date" id="missdate" readonly />
 										</td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Holder Wallet Address
-												:</b> <input type="text" id="mholder" readonly/></td>
+												:</b> <input type="text" id="mholder" readonly /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
@@ -308,51 +371,56 @@
 							<div>
 								<table>
 									<tr>
-										<td> <div id="msg" style="color:blue;font-weight:bold;">
-							</div>
-							</td>
-							</tr>
-							<tr>
-								<td style="width:50%;height:30px;"> Name : <div id="cname" style="color:green;"></div>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:50%;height:30px;"> ID : <div id="cid" style="color:green;"></div>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:50%;height:30px;"> Institution : <div id="cinst" style="color:green;">
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:50%;height:30px;"> Department : <div id="cdept" style="color:green;">
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:50%;height:30px;"> Classification : <div id="ccls"
-										style="color:green;"></div>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:50%;height:30px;"> Date of Issue : <div id="cissdate"
-										style="color:green;"></div>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:50%;height:30px;"> Holder Wallet Address : <div id="cholder"
-										style="color:green;"></div>
-								</td>
-							</tr>
-							</table>
-					</div><br>
+										<td>
+											<div id="msg" style="color:blue;font-weight:bold;">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:30px;"> Name : <div id="cname" style="color:green;">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:30px;"> ID : <div id="cid" style="color:green;">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:30px;"> Institution : <div id="cinst"
+												style="color:green;">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:30px;"> Department : <div id="cdept"
+												style="color:green;">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:30px;"> Classification : <div id="ccls"
+												style="color:green;"></div>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:30px;"> Date of Issue : <div id="cissdate"
+												style="color:green;"></div>
+										</td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:30px;"> Holder Wallet Address : <div id="cholder"
+												style="color:green;"></div>
+										</td>
+									</tr>
+								</table>
+							</div><br>
 
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
-	</div>
-	</section>
+		</section>
 	</div>
 
 	<!-- JS -->
@@ -421,7 +489,7 @@
 
 				if (err) {
 					console.log(err);
-					document.getElementById("fresult").innerHTML = "Nil";	
+					document.getElementById("fresult").innerHTML = "Nil";
 					swal({
 						title: "Oops!",
 						text: "Certificate cannot be issued!",
@@ -556,7 +624,7 @@
 
 				if (err) {
 					console.log(err);
-					document.getElementById("fresult").innerHTML = "Nil";	
+					document.getElementById("fresult").innerHTML = "Nil";
 					swal({
 						title: "Oops!",
 						text: "Certificate cannot be modified!",

@@ -71,7 +71,7 @@
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:format-list-numbered"
 										data-inline="false"></span></span></span></label>
-								<input type="text" id="artworkID" placeholder="Artwork ID" />
+								<input type="number" min="1 id="artworkID" placeholder="Artwork ID" />
 							</div>
 
 							<div class="form-group">
@@ -193,9 +193,27 @@
 							<div class="form-group">
 								<table>
 									<tr>
-										<td><input type="text" id="martworkID" placeholder="Enter Artwork ID" /></td>
-										<td><input type="button" class="iconify" data-icon="zmdi:search"
-												style="height:5%;width:7%" onclick="getdetails()" /></td>
+										<td><input type="number" min="1 id="martworkID" placeholder="Enter Artwork ID" /></td>
+										<!-- <td><input type="button" class="iconify" data-icon="zmdi:search"
+												style="height:5%;width:7%" onclick="getdetails()" /></td> -->
+												<td>
+													<div class="btn">
+														<input type="button" onclick="getdetails()" value="Get Details" style="
+																			background-color: #06806ec7;
+																			border: 2px solid;
+																			font-family: Trebuchet MS, Helvetica, sans-serif;
+																			border-radius: 0.6em;
+																			color: white;
+																			padding: 10px 15px;
+																			text-decoration: none;
+																			margin: 4px 2px;
+																			cursor: pointer;
+																			color: #fff;
+																			box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+																			-webkit-transition: all 150ms ease-in-out;
+																			transition: all 150ms ease-in-out;" />
+													</div>
+												</td>
 									</tr>
 								</table>
 							</div>
@@ -606,15 +624,15 @@
 				if (err) { console.log(err); }
 				if (result) {
 
-					document.getElementById("mname").innerHTML = result[0];
-					document.getElementById("mdate").innerHTML = result[1];
-					document.getElementById("mmedium").innerHTML = result[2];
-					document.getElementById("msize").innerHTML = result[3];
-					document.getElementById("mcolor").innerHTML = result[4];
-					document.getElementById("msignature").innerHTML = result[5];
-					document.getElementById("mprice").innerHTML = result[6];
-					document.getElementById("mdescription").innerHTML = result[7];
-					document.getElementById("mcondition").innerHTML = result[8];
+					document.getElementById("mname").value = result[0];
+					document.getElementById("mdate").value = result[1];
+					document.getElementById("mmedium").value = result[2];
+					document.getElementById("msize").value = result[3];
+					document.getElementById("mcolor").value = result[4];
+					document.getElementById("msignature").value = result[5];
+					document.getElementById("mprice").value = result[6];
+					document.getElementById("mdescription").value = result[7];
+					document.getElementById("mcondition").value = result[8];
 
 
 
