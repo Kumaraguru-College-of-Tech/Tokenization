@@ -462,7 +462,7 @@
 			console.log("Registering land details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(land_abi, land_contractaddress, { from: account, gasPrice: '5000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(land_abi, land_contractaddress, { from: account, gasPrice: '5000000', gas: '300000' });
 
 			var typ = document.getElementById("landtype").value;
 			var loc = document.getElementById("landloc").value;
@@ -509,7 +509,7 @@
 			console.log("Modifying Land Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(land_abi, land_contractaddress, { from: account, gasPrice: '5000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(land_abi, land_contractaddress, { from: account, gasPrice: '5000000', gas: '300000' });
 
 			var id = document.getElementById("mtokenID").value;
 			var type = document.getElementById("mlandtype").value;

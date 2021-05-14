@@ -452,7 +452,7 @@
 			console.log("Registering Artwork Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '300000' });
 
 			var artworkID = document.getElementById("artworkID").value;
 			var name = document.getElementById("name").value;
@@ -500,7 +500,7 @@
 			console.log("Modifying Collectible Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '300000' });
 
 
 			var artworkID = document.getElementById("martworkID").value;
@@ -610,7 +610,7 @@
 			console.log("Getting Collectible Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '300000' });
 
 			var artworkID = document.getElementById("martworkID").value;
 

@@ -118,30 +118,13 @@
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:balance"
 										data-inline="false"></span></label>
-								&nbsp;&nbsp;
-								<select class='custom gradient' id="inst">
-									<option value="Kumaraguru College of Technology" selected>Kumaraguru College of
-										Technology</option>
-									<option value="Sri Ramakrishna College of Engineering">Sri Ramakrishna College of
-										Engineering</option>
-									<option value="Sri Krishna Institute of Technology">Sri Krishna Institute of
-										Technology</option>
-									<option value="PSG College of Technology">PSG College of Technology</option>
-								</select>
+								<input type="text" id="inst" placeholder="Institution Name" />
 							</div>
 
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:assignment-check"
 										data-inline="false"></span></label>
-								&nbsp;&nbsp;
-								<select class='custom gradient' id="dept">
-									<option value="Computer Science and Engineering">Computer Science and Engineering
-									</option>
-									<option value="Information Technology">Information Technology</option>
-									<option value="Electronic and Communication Engineering">Electronic and
-										Communication Engineering</option>
-									<option value="Mechanical Engineering">Mechanical Engineering</option>
-								</select>
+								<input type="text" id="dept" placeholder="Department (eg: B.E. Civil Engineering)" />
 							</div>
 
 							<div class="form-group">
@@ -231,8 +214,7 @@
 												style="height:5%;width:7%" onclick="getdetails()" /></td> -->
 										<td>
 											<div class="btn">
-												<input type="button" onclick="getdetails()" value="Get Details"
-													style="
+												<input type="button" onclick="getdetails()" value="Get Details" style="
 															background-color: #06806ec7;
 															border: 2px solid;
 															font-family: Trebuchet MS, Helvetica, sans-serif;
@@ -481,7 +463,7 @@
 			console.log("Issuing College degree Certificate");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '300000' });
 
 			var name = document.getElementById("name").value;
 			var hid = document.getElementById("hid").value;
@@ -491,6 +473,8 @@
 			var cls = document.getElementById("cls").value;
 			var address = document.getElementById("address").value;
 			var tokenID = document.getElementById("tokenID").value;
+			console.log(typeof (inst));
+			console.log(dept);
 
 
 			//call the "issue certificate" function
@@ -526,7 +510,7 @@
 			console.log("Getting College degree Certificate Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '300000' });
 
 			var tokenID = document.getElementById("mtokenID").value;
 
@@ -563,7 +547,7 @@
 			console.log("Modifying College Competition Certificate");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '300000' });
 
 			var name = document.getElementById("mname").value;
 			var mid = document.getElementById("mid").value;
@@ -628,7 +612,7 @@
 			console.log("Getting College degree Certificate Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '3000000' });
+			var myContract = new web3.eth.Contract(cert_abi, cert_contractaddress, { from: account, gasPrice: '2000000000', gas: '300000' });
 
 			var tokenID = document.getElementById("tokenIDd").value;
 
