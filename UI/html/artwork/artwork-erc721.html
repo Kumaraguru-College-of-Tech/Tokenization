@@ -227,19 +227,19 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Medium :</b> <input
-												type="text" id="mmedium" readonly/></td>
+												type="text" id="mmedium" readonly /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Size :</b> <input
-												type="number" id="msize" readonly/> </td>
+												type="number" id="msize" readonly /> </td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Color :</b> <input
-												type="text" id="mcolor" readonly/></td>
+												type="text" id="mcolor" readonly /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Signature :</b> <input
-												type="text" id="msignature" readonly/></td>
+												type="text" id="msignature" readonly /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Price :</b> <input
@@ -259,7 +259,11 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date :</b> <input
-												type="date" id="mdate" readonly/></td>
+												type="date" id="mdate" readonly /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
+												:</b> <input type="textarea" id="mreason" /></td>
 									</tr>
 								</table>
 							</div><br><br>
@@ -525,11 +529,12 @@
 			var condition = document.getElementById("mcondition").value;
 			var img = document.getElementById("mimg").value;
 			var date = document.getElementById("mdate").value;
+			var reason = document.getElementById("mreason").value;
 
 
 
 			//call the "Register Collectible" function
-			var result = myContract.methods.updateCol(artworkID, name, date, medium, size, color, signature, price, description, condition).send(function (err, result) {
+			var result = myContract.methods.updateCol(artworkID, name, date, medium, size, color, signature, price, description, condition, reason).send(function (err, result) {
 
 				if (err) {
 					console.log(err);
@@ -596,12 +601,20 @@
 					document.getElementById("cdate").innerHTML = result[1];
 					document.getElementById("cmedium").innerHTML = result[2];
 					document.getElementById("csize").innerHTML = result[3];
-					document.getElementById("ccolor").innerHTML = result[4];
-					document.getElementById("csignature").innerHTML = result[5];
-					document.getElementById("cprice").innerHTML = result[6];
-					document.getElementById("cdescription").innerHTML = result[7];
-					document.getElementById("ccondition").innerHTML = result[8];
 
+				}
+
+			});
+			var result2 = myContract.methods.retrieveCol2(artworkID).call(function (err, result2) {
+
+				if (err) { console.log(err); }
+				if (result2) {
+
+					document.getElementById("ccolor").innerHTML = result2[0];
+					document.getElementById("csignature").innerHTML = result2[1];
+					document.getElementById("cprice").innerHTML = result2[2];
+					document.getElementById("cdescription").innerHTML = result2[3];
+					document.getElementById("ccondition").innerHTML = result2[4];
 				}
 
 			});
@@ -627,14 +640,19 @@
 					document.getElementById("mdate").value = result[1];
 					document.getElementById("mmedium").value = result[2];
 					document.getElementById("msize").value = result[3];
-					document.getElementById("mcolor").value = result[4];
-					document.getElementById("msignature").value = result[5];
-					document.getElementById("mprice").value = result[6];
-					document.getElementById("mdescription").value = result[7];
-					document.getElementById("mcondition").value = result[8];
+				}
 
+			});
+			var result2 = myContract.methods.retrieveCol2(artworkID).call(function (err, result2) {
 
+				if (err) { console.log(err); }
+				if (result2) {
 
+					document.getElementById("mcolor").value = result2[0];
+					document.getElementById("msignature").value = result2[1];
+					document.getElementById("mprice").value = result2[2];
+					document.getElementById("mdescription").value = result2[3];
+					document.getElementById("mcondition").value = result2[4];
 				}
 
 			});

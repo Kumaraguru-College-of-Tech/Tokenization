@@ -6,7 +6,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contr
 /**
  * @title        Collectibles  
  * @author       Preetha P
- * Updated       04.04.2021
+ * Updated       14.05.2021
  */
 
 contract Collectibles is ERC1155 {
@@ -50,7 +50,7 @@ contract Collectibles is ERC1155 {
       require(msg.sender == ownerOf(ui_Art_Token_ID), "Only Art Owner can modify the details.");
       _;
     }
-
+    
     /** 
      * @dev Function to Register Collectible Details
      * @param ui_Art_Token_ID             ArtWork Unique Token ID
@@ -92,28 +92,39 @@ contract Collectibles is ERC1155 {
       * @param Art_Created_Date         ArtWork Created Date
       * @param Art_Medium               ArtWork Created Medium or Material 
       * @param Art_Size                 ArtWork Size(inch or feet or meter)
-      * @param Art_Sign                 Signature Position in the ArtWork
-      * @param Art_Price                ArtWork Price
-      * @param Art_Cond                 ArtWork Current Condition
-      * 
+     
      */
     
-    function retrieveCol(uint256 ui_Art_Token_ID) public view returns ( string memory Art_Name, string memory Art_Created_Date, string memory Art_Medium, uint Art_Size, 
-                         string memory Art_Sign, uint Art_Price, string memory Art_Cond) {
+    function retrieveCol(uint256 ui_Art_Token_ID) public view returns ( string memory Art_Name, string memory Art_Created_Date, string memory Art_Medium, uint Art_Size) {
        
        Collectible storage Aid = ColList[ui_Art_Token_ID];  
        return(Aid.Art_Name,
               Aid.Art_Created_Date,
               Aid.Art_Medium,
-              Aid.Art_Size,
-              Aid.Art_Sign,
-              Aid.Art_Price,
-              Aid.Art_Cond
+              Aid.Art_Size
               );
        
     }
-    
-    
+    /** 
+      * @param Art_Color                ArtWork Color
+      * @param Art_Sign                 Signature Position in the ArtWork
+      * @param Art_Price                ArtWork Price
+      * @param Art_Desc                 ArtWork Description
+      * @param Art_Cond                 ArtWork Current Condition
+     */
+     
+     
+     
+    function retrieveCol2(uint256 ui_Art_Token_ID) public view returns( string memory Art_Color, string memory Art_Sign, uint Art_Price, string memory Art_Desc, string memory Art_Cond) {
+                     
+        Collectible storage Aid = ColList[ui_Art_Token_ID];  
+        return(Aid.Art_Color,
+              Aid.Art_Sign,
+              Aid.Art_Price,
+              Aid.Art_Desc,
+              Aid.Art_Cond
+              );
+    }          
     /** 
      * @dev Function to Update Collectible Details
      * @param ui_Art_Token_ID             ArtWork Unique Token ID
@@ -129,8 +140,7 @@ contract Collectibles is ERC1155 {
     */
  
     function updateCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Created_Date, string memory ui_Art_Medium, uint ui_Art_Size, 
-                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) 
-                         public isOwner(ui_Art_Token_ID){
+                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) public isOwner(ui_Art_Token_ID){
                              
                              col.Art_Token_ID           = ui_Art_Token_ID;
                              col.Art_Name               = ui_Art_Name;
