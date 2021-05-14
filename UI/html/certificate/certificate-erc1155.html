@@ -115,9 +115,9 @@
 
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:balance"
-										data-inline="false"></span></label>
-								<input type="text" id="inst" placeholder="Institution Name" />
-								<!-- <select class='custom gradient' id="inst">
+										data-inline="false"></span></label>&nbsp;&nbsp;
+								<!-- <input type="text" id="inst" placeholder="Institution Name" /> -->
+								<select class='custom gradient' id="inst">
 									<option value="Kumaraguru College of Technology" selected>Kumaraguru College of
 										Technology</option>
 									<option value="Sri Ramakrishna College of Engineering">Sri Ramakrishna College of
@@ -125,21 +125,21 @@
 									<option value="Sri Krishna Institute of Technology">Sri Krishna Institute of
 										Technology</option>
 									<option value="PSG College of Technology">PSG College of Technology</option>
-								</select> -->
+								</select>
 							</div>
 
 							<div class="form-group">
 								<label><span class="iconify" data-icon="zmdi:assignment-check"
-										data-inline="false"></span></label>
-								<input type="text" id="dept" placeholder="Department (eg: B.E. Civil Engineering)" />
-								<!-- <select class='custom gradient' id="dept">
+										data-inline="false"></span></label>&nbsp;&nbsp;
+								<!-- <input type="text" id="dept" placeholder="Department (eg: B.E. Civil Engineering)" /> -->
+								<select class='custom gradient' id="dept">
 									<option value="Computer Science and Engineering">Computer Science and Engineering
 									</option>
 									<option value="Information Technology">Information Technology</option>
 									<option value="Electronic and Communication Engineering">Electronic and
 										Communication Engineering</option>
 									<option value="Mechanical Engineering">Mechanical Engineering</option>
-								</select> -->
+								</select>
 							</div>
 
 							<div class="form-group">
@@ -472,7 +472,7 @@
 			console.log("Issuing College degree Certificate");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(cert_abi2, cert_contractAddress2, { from: account, gasPrice: '2000000000', gas: '300000' });
+			var myContract = new web3.eth.Contract(cert_abi2, cert_contractAddress2, { from: account, gasPrice: '2000000000', gas: '625048' });
 
 			var name = document.getElementById("name").value;
 			var hid = document.getElementById("hid").value;

@@ -258,6 +258,10 @@
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Date :</b> <input
 												type="date" id="mdate" readonly/></td>
 									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
+												:</b> <input type="textarea" id="mreason" /></td>
+									</tr>
 								</table>
 							</div><br><br>
 
@@ -451,7 +455,7 @@
 			console.log("Registering Artwork Details");
 
 			//Instantiate and connect to contract address via ABI
-			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '300000' });
+			var myContract = new web3.eth.Contract(artwork_abi2, artwork_contract_address, { from: account, gasPrice: '2000000000', gas: '625048' });
 
 			var artworkID = document.getElementById("artworkID").value;
 			var name = document.getElementById("name").value;
