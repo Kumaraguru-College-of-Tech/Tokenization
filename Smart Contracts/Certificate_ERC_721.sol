@@ -50,7 +50,7 @@ contract Certificates is ERC721 {
     }
 
     modifier isAuthorized {
-      require(msg.sender == 0xcC0A7dB3dD838b0D99F9945E9dF825a0F9c8345c, "Only Anna University can issue certificate.");
+      require(msg.sender == 0xcC0A7dB3dD838b0D99F9945E9dF825a0F9c8345c, "Only Authorized University can issue certificate.");
       _;
     }
      

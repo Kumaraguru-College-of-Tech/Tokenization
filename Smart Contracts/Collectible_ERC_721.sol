@@ -89,7 +89,7 @@ contract Collectibles is ERC721{
       * @dev Function to Retrieve Collectible Details by specifying the Artwork ID
       * @param ui_Art_Token_ID          ArtWork Unique Token ID
       * @param Art_Name                 ArtWork Name
-      * @param Art_Created_Date                 ArtWork Created Date
+      * @param Art_Created_Date         ArtWork Created Date
       * @param Art_Medium               ArtWork Created Medium or Material 
       * @param Art_Size                 ArtWork Size(inch or feet or meter)
       * @param Art_Sign                 Signature Position in the ArtWork
@@ -118,7 +118,7 @@ contract Collectibles is ERC721{
      * @dev Function to Update Collectible Details
      * @param ui_Art_Token_ID             ArtWork Unique Token ID
      * @param ui_Art_Name                 ArtWork Name
-     * @param ui_Art_Created_Date                 ArtWork Created Date
+     * @param ui_Art_Created_Date         ArtWork Created Date
      * @param ui_Art_Medium               ArtWork Created Medium or Material 
      * @param ui_Art_Size                 ArtWork Size(inch or feet or meter)
      * @param ui_Art_Color                ArtWork Color

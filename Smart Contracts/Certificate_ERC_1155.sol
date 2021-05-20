@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.22 <0.7.0;
+pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contracts/token/ERC1155/ERC1155.sol";
 
@@ -45,7 +45,7 @@ contract Certificates is ERC1155 {
      constructor() public ERC1155("KCTC") { }
 
     modifier isAuthorized {
-      require(msg.sender == 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, "Only Anna University can issue certificate.");
+      require(msg.sender == 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, "Only Authorized University can issue certificate.");
       _;
     }
      

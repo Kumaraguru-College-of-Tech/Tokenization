@@ -1,7 +1,7 @@
 <!-- 
     Author       : Sandhiya S and Ramaguru R
     Date Created : 28.11.2020
-    Date Updated : 02.01.2021
+    Date Updated : 20.05.2021
 -->
 
 
@@ -76,7 +76,7 @@
 	<header>
 		<div>
 			<img src="../../images/certificate-logo.png" style="height:40px; width:40px;" />
-			&nbsp;<h3>Anna University</h3>
+			&nbsp;<h3>Coimbatore University</h3>
 		</div>
 
 		<nav>
@@ -152,6 +152,13 @@
 								<label><span class="iconify" data-icon="zmdi:shield-check"
 										data-inline="false"></span></label>
 								<input type="text" id="address" placeholder="Holder Wallet Address" />
+							</div>
+
+							<div class="form-group">
+								<label><span class="iconify" data-icon="zmdi:photo-size-select-large"
+										data-inline="false"></span>Certificate Photocopy</label>
+								<input type="file" id="img" placeholder="Upload Certificate" accept="image/*"
+									style="padding-left:45%;">
 							</div>
 
 							<div class="form-group">
@@ -279,6 +286,10 @@
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Holder Wallet Address
 												:</b> <input type="text" id="mholder" readonly /></td>
+									</tr>
+									<tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b> Certificate Photocopy IPFS ID:</b> <input
+											type="text" id="mimg" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
@@ -416,6 +427,12 @@
 								<tr>
 									<td style="width:50%;height:30px;"> Holder Wallet Address : <div id="cholder"
 											style="color:green;"></div>
+									</td>
+								</tr>
+								<tr>
+									<td style="width:50%;height:30px;"> Certificate Photocopy IPFS ID : <div id="cphoto"
+											style="color:green;">
+										</div>
 									</td>
 								</tr>
 							</table>
