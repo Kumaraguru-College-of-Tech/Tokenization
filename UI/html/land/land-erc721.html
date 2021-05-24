@@ -39,6 +39,10 @@
 			font-variant: normal;
 			text-transform: capitalize;
 		}
+		input[readonly] {
+			background-color: rgba(76, 65, 65, 0.102) !important;
+		}
+
 	</style>
 </head>
 
@@ -216,6 +220,11 @@
 							<div>
 								<table>
 									<tr>
+										<td>
+											<div id="msg2" style="color:blue;font-weight:bold;">
+										</td>
+									</tr>
+									<tr>
 										<td style="width:50%;height:20px;"> <b>Land Type :</b> <input type="text"
 												id="mlandtype" /></td>
 									</tr>
@@ -229,36 +238,35 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Size :</b> <input
-												type="text" id="mlandsize" /></td>
+												type="text" id="mlandsize" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Boundary Details
-												:</b> <input type="text" id="mlandbdet" /></td>
+												:</b> <input type="text" id="mlandbdet" readyonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Latitude Details
-												:</b> <input type="text" id="mlandlatdet" /></td>
+												:</b> <input type="text" id="mlandlatdet" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Longitude Details
-												:</b> <input type="text" id="mlandlongdet" /></td>
+												:</b> <input type="text" id="mlandlongdet" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Patta No :</b>
-											<input type="number" id="mpattano" /></td>
+											<input type="number" id="mpattano" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Document No :</b>
-											<input type="number" id="mdocno" /></td>
+											<input type="number" id="mdocno" readonly/></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Owner Wallet
-												Address :</b> <input type="text" id="mlandown" /></td>
+												Address :</b> <input type="text" id="mlandown" readonly/></td>
 									</tr>
 									<tr>
-										<td>
-											<div id="msg2" style="color:blue;font-weight:bold;">
-										</td>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
+												:</b> <input type="textarea" id="mreason" /></td>
 									</tr>
 								</table>
 							</div><br><br>
