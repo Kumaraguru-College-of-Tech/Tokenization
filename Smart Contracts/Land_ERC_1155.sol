@@ -41,8 +41,7 @@ contract Lands is ERC1155 {
      
       address Land_Owner_Adr;       /* Land Owner Address */
       
-      string Reason                  /* Reason to Modify */
-     
+      string Reason;                 /* Reason to Modify */ 
      
     }
       Land lan;
