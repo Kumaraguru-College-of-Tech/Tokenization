@@ -1,7 +1,7 @@
 <!-- 
     Author       : Sowbharnika K and Ramaguru R
     Date Created : 28.12.2020
-    Date Updated : 24.05.2021
+    Date Updated : 16.04.2021
 -->
 
 
@@ -39,10 +39,6 @@
 			font-variant: normal;
 			text-transform: capitalize;
 		}
-		input[readonly] {
-			background-color: rgba(76, 65, 65, 0.102) !important;
-		}
-
 	</style>
 </head>
 
@@ -220,11 +216,6 @@
 							<div>
 								<table>
 									<tr>
-										<td>
-											<div id="msg2" style="color:blue;font-weight:bold;">
-										</td>
-									</tr>
-									<tr>
 										<td style="width:50%;height:20px;"> <b>Land Type :</b> <input type="text"
 												id="mlandtype" /></td>
 									</tr>
@@ -238,35 +229,40 @@
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Size :</b> <input
-												type="text" id="mlandsize" readonly/></td>
+												type="text" id="mlandsize" /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Boundary Details
-												:</b> <input type="text" id="mlandbdet" readonly/></td>
+												:</b> <input type="text" id="mlandbdet" /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Latitude Details
-												:</b> <input type="text" id="mlandlatdet" readonly/></td>
+												:</b> <input type="text" id="mlandlatdet" /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Longitude Details
-												:</b> <input type="text" id="mlandlongdet" readonly/></td>
+												:</b> <input type="text" id="mlandlongdet" /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Patta No :</b>
-											<input type="number" id="mpattano" readonly/></td>
+											<input type="number" id="mpattano" /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Document No :</b>
-											<input type="number" id="mdocno" readonly/></td>
+											<input type="number" id="mdocno" /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Land Owner Wallet
-												Address :</b> <input type="text" id="mlandown" readonly/></td>
+												Address :</b> <input type="text" id="mlandown" /></td>
 									</tr>
 									<tr>
 										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
 												:</b> <input type="textarea" id="mreason" /></td>
+									</tr>
+									<tr>
+										<td>
+											<div id="msg2" style="color:blue;font-weight:bold;">
+										</td>
 									</tr>
 								</table>
 							</div><br><br>
@@ -530,6 +526,7 @@
 			var pno = document.getElementById("mpattano").value;
 			var dno = document.getElementById("mdocno").value;
 			var address = document.getElementById("mlandown").value;
+			var reason = document.getElementById("mreason").value;
 
 			//var ipfshash = document.getElementById("ipfshash").value;
 
