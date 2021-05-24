@@ -6,7 +6,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contr
 /**
  * @title        Collectibles  
  * @author       Preetha P
- * Updated       14.05.2021
+ * Updated       24.05.2021
  */
 
 contract Collectibles is ERC1155 {
@@ -36,6 +36,8 @@ contract Collectibles is ERC1155 {
       string Art_Desc;                  /* ArtWork Description */
       
       string Art_Cond;                  /* ArtWork Current Condition */
+      
+      string Reason;                     /* Reason to modify */
 
      
     }
@@ -137,10 +139,11 @@ contract Collectibles is ERC1155 {
      * @param ui_Art_Price                ArtWork Price
      * @param ui_Art_Desc                 ArtWork Description
      * @param ui_Art_Cond                 ArtWork Current Condition
+     * @param ui_Reason                   Reason to modify
     */
  
     function updateCol(uint256 ui_Art_Token_ID, string memory ui_Art_Name, string memory ui_Art_Created_Date, string memory ui_Art_Medium, string memory ui_Art_Size, 
-                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond) public isOwner(ui_Art_Token_ID){
+                         string memory ui_Art_Color, string memory ui_Art_Sign, uint ui_Art_Price, string memory ui_Art_Desc, string memory ui_Art_Cond, string memory ui_Reason) public isOwner(ui_Art_Token_ID){
                              
                              col.Art_Token_ID           = ui_Art_Token_ID;
                              col.Art_Name               = ui_Art_Name;
@@ -152,6 +155,7 @@ contract Collectibles is ERC1155 {
                              col.Art_Price              = ui_Art_Price;
                              col.Art_Desc               = ui_Art_Desc;
                              col.Art_Cond               = ui_Art_Cond;
+                             col.Reason                 = ui_Reason;
                              
                              ColList[ui_Art_Token_ID]         = col;
     
