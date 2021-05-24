@@ -7,7 +7,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
  * @title        Land
  * @author       K.Sowbharnika
  * Created       25.12.2020
- * Updated       27.04.2021
+ * Updated       24.05.2021
  */
 
 contract Lands is ERC721{
@@ -28,17 +28,19 @@ contract Lands is ERC721{
      
       uint256 Land_Size;            /* Land Size */
      
-      string Land_Bound_Det;         /Land Boundary Details/
+      string Land_Bound_Det;         /*Land Boundary Details*/
       
-      string Land_Lat_Det;           /Land Latitude Details/
+      string Land_Lat_Det;           /*Land Latitude Details*/
       
-      string Land_Long_Det;          /Land Longitude Details/
+      string Land_Long_Det;          /*Land Longitude Details*/
      
       uint256 Land_Patta_No;        /* Land Patta Number */
      
-      uint256 Land_Doc_No;          /Land Document Number/
+      uint256 Land_Doc_No;          /*Land Document Number*/
      
       address Land_Owner_Adr;       /* Land Owner Address */
+      
+      string Reason;                 /* Reason to Modify */ 
      
      
     }
@@ -140,10 +142,11 @@ contract Lands is ERC721{
      * @param ui_Land_Patta_No             Land Patta Number
      * @param ui_Land_Doc_No               Land Document Number
      * @param ui_Land_Owner_Adr            Land Owner Address
+     * @param ui_Reason                    Reason
     */
     
     function updateLand(uint256 ui_Land_Token, string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, string memory ui_Land_Lat_Det, string memory ui_Land_Long_Det, uint256 ui_Land_Patta_No,
-                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public isAuthorized{
+                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr, string ui_Reason) public isAuthorized{
                              
                             Land storage Lid = LandList[ui_Land_Token];  
        
@@ -157,6 +160,7 @@ contract Lands is ERC721{
                              Lid.Land_Patta_No           = ui_Land_Patta_No;
                              Lid.Land_Doc_No             = ui_Land_Doc_No;
                              Lid.Land_Owner_Adr          = ui_Land_Owner_Adr;
+                             Lid.Reason                  = ui_Reason;
     
                             LandList[ui_Land_Token]  = Lid;
     
