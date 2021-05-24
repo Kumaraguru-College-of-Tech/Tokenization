@@ -1,7 +1,7 @@
 <!-- 
     Author       : Sowbharnika K and Ramaguru R
     Date Created : 28.12.2020
-    Date Updated : 04.04.2021
+    Date Updated : 24.05.2021
 -->
 
 
@@ -38,6 +38,9 @@
             font-variant: normal;
             text-transform: capitalize;
         }
+  	input[readonly] {
+			background-color: rgba(76, 65, 65, 0.102) !important;
+		}
     </style>
 </head>
 
@@ -229,32 +232,36 @@
                                             <input type="text" id="mlandloctype" /></td>
                                     </tr>
                                     <tr>
-                                        <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Size :</b> <input type="text" id="mlandsize" /></td>
+                                        <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Size :</b> <input type="text" id="mlandsize" readonly/></td>
                                     </tr>
                                     <tr>
                                         <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Boundary Details
-												:</b> <input type="text" id="mlandbdet" /></td>
+												:</b> <input type="text" id="mlandbdet" readonly/></td>
                                     </tr>
                                     <tr>
                                         <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Latitude Details
-												:</b> <input type="text" id="mlandlatdet" /></td>
+												:</b> <input type="text" id="mlandlatdet" readonly/></td>
                                     </tr>
                                     <tr>
                                         <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Longitude Details
-												:</b> <input type="text" id="mlandlongdet" /></td>
+												:</b> <input type="text" id="mlandlongdet" readonly/></td>
                                     </tr>
                                     <tr>
                                         <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Patta No :</b>
-                                            <input type="number" id="mpattano" /></td>
+                                            <input type="number" id="mpattano" readonly/></td>
                                     </tr>
                                     <tr>
                                         <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Document No :</b>
-                                            <input type="number" id="mdocno" /></td>
+                                            <input type="number" id="mdocno" readonly/></td>
                                     </tr>
                                     <tr>
                                         <td style="width:50%;height:20px;padding-top:15px;"> <b>Land Owner Wallet
-												Address :</b> <input type="text" id="mlandown" /></td>
+												Address :</b> <input type="text" id="mlandown" readonly/></td>
                                     </tr>
+				    <tr>
+										<td style="width:50%;height:20px;padding-top:15px;"> <b>Reason to Modify
+												:</b> <input type="textarea" id="mreason" /></td>
+									</tr>
                                 </table>
                             </div><br><br>
 
