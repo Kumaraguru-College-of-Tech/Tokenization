@@ -40,6 +40,8 @@ contract Lands is ERC1155 {
       uint256 Land_Doc_No;          /*Land Document Number */
      
       address Land_Owner_Adr;       /* Land Owner Address */
+      
+      string Reason                  /* Reason to Modify */
      
      
     }
@@ -152,10 +154,11 @@ contract Lands is ERC1155 {
      * @param ui_Land_Patta_No             Land Patta Number
      * @param ui_Land_Doc_No               Land Document Number
      * @param ui_Land_Owner_Adr            Land Owner Address
+     * @param ui_Reason                    Reason
     */
     
     function updateLand(uint256 ui_Land_Token, string memory ui_Land_Type, string memory ui_Land_Loc, string memory ui_Land_Loc_Type, uint256 ui_Land_Size, string memory ui_Land_Bound_Det, string memory ui_Land_Lat_Det, string memory ui_Land_Long_Det, uint256 ui_Land_Patta_No,
-                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr) public isAuthorized{
+                        uint256 ui_Land_Doc_No, address ui_Land_Owner_Adr, string memory ui_Reason) public isAuthorized{
                              
                             Land storage Lid = LandList[ui_Land_Token];  
        
@@ -169,6 +172,7 @@ contract Lands is ERC1155 {
                              Lid.Land_Patta_No           = ui_Land_Patta_No;
                              Lid.Land_Doc_No             = ui_Land_Doc_No;
                              Lid.Land_Owner_Adr          = ui_Land_Owner_Adr;
+                             Lid.Reason                  = ui_Reason;
     
                             LandList[ui_Land_Token]  = Lid;
     
